@@ -1,0 +1,89 @@
+
+
+.nav_cor{
+background-color: rgba(0, 0, 0, 0.555);
+}
+#logo{
+    position: relative;
+    right: 20%;
+    margin-left: 2%;
+    height: 4%;
+    width: 4%;
+    border-radius: 50%;
+}
+#logo {
+    max-width: 30%; /* Ajuste o tamanho da logo conforme necessário */
+    margin-left: 10px; /* Ajuste a margem à esquerda conforme necessário */
+    margin-right: 30px; /* Ajuste a margem à direita conforme necessário */
+}
+.navbar-brand img {
+    display: inline-block;
+    vertical-align: middle;
+}
+.no-link {
+    pointer-events: none;
+    cursor: default;
+  }
+.nav-item{
+    position: absolute;
+    top: 23%;
+}
+.home{
+    top: -1vh;
+    left: 8vw;
+    list-style: none;
+}
+.produto{
+    left: 38vw;
+}
+.contato{
+    left: 45vw;
+}
+.sobre{
+    left: 52vw;
+}
+
+.mobile{
+    display: none;
+}
+
+#login{
+    position: absolute;
+    right: 12rem;
+    background-color: rgb(255, 255, 255);
+    border: 1px solid rgb(11, 195, 228);
+    cursor: pointer;
+    transition: all 0.3s;
+    
+}
+#login:hover {
+    background-color: #bebebe;
+    color: #028fec;
+    transform: scale(1.1);
+  }
+
+#registra{
+    position: absolute;
+    right: 4rem;
+    background-color: rgb(94, 10, 228);
+    color: rgb(7, 255, 234);
+    border: 1px solid rgb(11, 195, 228);
+}
+
+#registra:hover {
+    color: #086bff;
+    background-color: #37294d;
+    transform: scale(1.1);
+}
+#navbarScroll{
+    display: block;
+}
+#menu-toggler{
+    display: none;
+}
+@media (max-width:768px){
+    .navbar-nav{
+        display: none;
+    }
+}
+

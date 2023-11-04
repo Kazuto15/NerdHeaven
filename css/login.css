@@ -1,0 +1,36 @@
+.container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh; /* Isso garante que a div .container ocupe toda a altura da janela de visualização (viewport). */
+}
+.form-container {
+    width: 30vw; /* Ocupa 50% da largura da janela de visualização */
+    max-width: 90vw; /* Limita a largura máxima a 90% da largura da janela de visualização */
+    height: 60vh;
+    padding: 4vh; /* Define o preenchimento em relação à altura da janela de visualização */
+    background-color: #383838;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    color: white;
+}
+.form-group {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 1rem;
+}
+.buttonEnviar{
+    position: absolute; /* Fixa o botão*/
+    bottom: 25%; /* Coloca o botão na parte inferior */
+    transform: translateY(-90%); /* Centraliza verticalmente o botão */
+    left: 50%; /* Alinha o botão horizontalmente no centro*/
+    transform: translateX(-50%); /* Centraliza horizontalmente o botão */
+    color: white;
+    background-color: rgb(49, 57, 94);
+    border-radius: 5px;
+    padding: 0.5%;
+    padding-left: 10%;
+    padding-right: 10%;
+    border: 1px solid black;
+    border-radius: 5px;
+}
