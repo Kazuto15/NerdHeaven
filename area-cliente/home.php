@@ -16,7 +16,7 @@
         <h3 class="justify-content-center text-white">Os melhores produtos Geek</h3>
 
         <button>
-            <a href="./area-cliente/produtos.php">Produtos</a>
+            <a href="../area-cliente/produtos.php">Produtos</a>
         </button>
     </div>
 </body>

@@ -62,5 +62,24 @@
             $this->token = $token; 
         }
 
+        public function generateToken(){
+            return bin2hex(random_bytes(16));
+        }
+
+        public function salvarImagem($novo_nome) {
+            if(empty($_FILES ['foto']['size']) !=1){
+                if($novo_nome == ""){
+                    $novo_nome = md5(time()). ".jpg";
+                }
+                $diretorio = "../../img/user/";
+
+                $nomeCompleto = $diretorio.$novo_nome;
+
+                move_uploaded_file($_FILES['foto']['tmp_name'], $nomeCompleto);
+                return $novo_nome;
+            }else{
+                return $novo_nome;
+            }
+        }
     }
 ?>
