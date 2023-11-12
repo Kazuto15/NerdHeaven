@@ -1,6 +1,6 @@
 <?php
 
-    class User{
+    class user{
         public $id, $nome, $sobrenome, $cpf, $nasc, $email, $password, $imagem, $token;
         
         public function getId(){

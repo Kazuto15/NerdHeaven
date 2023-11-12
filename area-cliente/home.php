@@ -19,5 +19,9 @@
             <a href="../area-cliente/produtos.php">Produtos</a>
         </button>
     </div>
+    
+    <?php
+        require_once ("../componentes/footer-cliente.php")
+    ?>
 </body>
 </html>

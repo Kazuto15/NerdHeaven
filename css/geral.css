@@ -83,3 +83,22 @@ body {
         width: 90%; /* Cards ocupam 100% da largura em telas menores */
     }
 }
+
+.footer {
+    background-color: black;
+    height: 15vh;
+    font-size: 12px;
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .footer a{
+    text-decoration: none;
+    color: white;
+  }
+  
+  .footer a:hover {
+    color: #b9b9b9;
+  }

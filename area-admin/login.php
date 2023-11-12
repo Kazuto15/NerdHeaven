@@ -17,8 +17,8 @@
   <div class="container col-xl-10 col-xxl-8 " style="height: 95vh; padding:8% 30px; background-color:'#ccc'">
     <div class="row align-items-center g-lg-5 py-4  ">
       <div class="col-lg-7 text-center text-lg-start">
-        <img src="./../img/site/logo.png" class="rounded mx-auto d-block" alt="..." style="width:40%">
-        <h1 class="display-4 fw-bold lh-1 text-body-emphasis mb-3 text-center">FilmeOn</h1>
+        <img src="./../imgs/Logo_f.png" class="rounded-circle mx-auto d-block" alt="..." style="width:20%">
+        <h1 class="display-4 fw-bold lh-1 text-body-emphasis mb-3 text-center">Nerd Heaven</h1>
         <p class="col-lg-10 fs-5 text-center w-100 display-4 fw-bold lh-1">Painel Adminstrativo</p>
       </div>
       <div class="col-md-10 mx-auto col-lg-5">

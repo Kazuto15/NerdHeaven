@@ -1,10 +1,10 @@
 <?php
-    require_once '../../model/Conexao.php';
+    require_once '../model/Conexao.php';
     
     class UserDao{
         public static function insert($user){
             $conexao = Conexao::conectar();
-            $query = "INSERT INTO tbuser (nomeUser, sobrenomeUser, cpfUser, nascUser, emailUser, passwordUser, imagemUser, tokenUser) VALUES (?,?,?,?,?,?,?,?)";
+            $query = "INSERT INTO tbUser (nomeUser, sobrenomeUser, cpfUser, nascUser, emailUser, passwordUser, imagemUser, tokenUser) VALUES (?,?,?,?,?,?,?,?)";
             $stmt = $conexao->prepare($query);
             $stmt->bindValue(1, $user->getNome());
             $stmt->bindValue(2, $user->getSobrenome());
@@ -25,7 +25,7 @@
         }
         public static function selectById($id){
             $conexao = Conexao::conectar();
-            $query = "SELECT * FROM tbuser WHERE idUser = ?";
+            $query = "SELECT * FROM tbUser WHERE idUser = ?";
             $stmt = $conexao->prepare($query);
             $stmt->bindValue(1, $id);
             $stmt->execute();
@@ -33,14 +33,14 @@
         }
         public static function delete($id){
             $conexao = Conexao::conectar();
-            $query = "DELETE FROM tbuser WHERE idUser = ?";
+            $query = "DELETE FROM tbUser WHERE idUser = ?";
             $stmt = $conexao->prepare($query);
             $stmt->bindValue(1, $id);
             return  $stmt->execute();
         }
         public static function update($id, $user ){
             $conexao = Conexao::conectar();
-            $query = "UPDATE tbuser SET 
+            $query = "UPDATE tbUser SET 
             nomeUser = ?, 
             sobrenomeUser = ?, 
             cpfUser  = ?,
@@ -64,7 +64,7 @@
         }
         public static function checkCredentials($email, $senha){
             $conexao = Conexao::conectar();
-            $query = "SELECT * FROM tbuser WHERE emailUser = ? and passwordUser = ?";
+            $query = "SELECT * FROM tbUser WHERE emailUser = ? and passwordUser = ?";
             $stmt = $conexao->prepare($query);
             $stmt->bindValue(1, $email);
             $stmt->bindValue(2, $senha);
