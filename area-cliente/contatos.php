@@ -12,5 +12,8 @@
     <?php
         require_once ('../componentes/header-user.php')
     ?>
+    <?php
+            require_once ("../componentes/footer-cliente.php")
+         ?>
 </body>
 </html>

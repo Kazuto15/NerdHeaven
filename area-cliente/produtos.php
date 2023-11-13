@@ -68,6 +68,8 @@
                 <p>Preco: R$19,99</p>
             </div>
         </div>
-        
+        <?php
+            require_once ("../componentes/footer-cliente.php")
+         ?>
 </body>
 </html>

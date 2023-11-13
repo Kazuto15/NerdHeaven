@@ -1,4 +1,6 @@
-<link rel="stylesheet" href="../css/geral.css">
+<link rel="stylesheet" href="../css/footer.css">
+
+
 <footer class="align-bottom container-fluid footer w-100">
   <a href="#" target="blank" class="me-4">FilmeOn © 2023 </a>
   <a href="#" target="blank" class="me-4">Instagram</a>
