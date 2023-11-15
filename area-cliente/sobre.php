@@ -12,5 +12,6 @@
     <?php
         require_once ('../componentes/header-user.php')
     ?>
+    
 </body>
 </html>

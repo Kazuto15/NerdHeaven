@@ -12,7 +12,7 @@
   <div class="container">
     <a class="navbar-brand no-link" href="home.php">
         <li class="nav-item home">
-          <a class="navbar-brand nav-link text-white" href="#">
+          <a class="navbar-brand nav-link text-white" href="home.php">
             <img src="../imgs/header_user/Logo.png" width="35" height="35" class="d-inline-block align-top rounded-circle" alt="">NerdHeaven
           </a>
           </li>

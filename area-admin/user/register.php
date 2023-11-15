@@ -8,7 +8,7 @@
     $cpf_User = $userDao['cpfUser'];
     $nasc_User= $userDao['nascUser'];
     $email_User = $userDao['emailUser'];
-    $password_User = $userDao['passwordUser'];
+    $password_User = $userDao['senhaUser'];
     $imagem_User = $userDao['imagemUser'];
     }else{
       $nome_User = '';
@@ -60,7 +60,7 @@
             <div class="card-body row" style="align-items: center; justify-content: center;">
               <div class="col-md-2   text-center" >
                 <div class="bg-white rounded border" >
-                  <img id="preview" src="../../img/user/<?=$imagem_User!="" ? $imagem_User : 'padrao.png';?>" alt="..."
+                  <img id="preview" src="../../imgs/user/<?=$imagem_User!="" ? $imagem_User : 'padrao.png';?>" alt="..."
                     class="rounded  w-100  "  style="height:200px; object-fit: cover; border:4px solid #ccc" >
                 </div>
               </div>

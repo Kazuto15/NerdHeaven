@@ -1,10 +1,9 @@
 <?php
-    require_once '../model/Conexao.php';
-    
+    require_once __DIR__.'../../model/Conexao.php';
     class UserDao{
         public static function insert($user){
-            $conexao = Conexao::conectar();
-            $query = "INSERT INTO tbUser (nomeUser, sobrenomeUser, cpfUser, nascUser, emailUser, passwordUser, imagemUser, tokenUser) VALUES (?,?,?,?,?,?,?,?)";
+           try{ $conexao = Conexao::conectar();
+            $query = "INSERT INTO tbUser (nomeUser, sobrenomeUser, cpfUser, nascUser, emailUser, senhaUser, tokenUser,imagemUser ) VALUES (?,?,?,?,?,?,?,?)";
             $stmt = $conexao->prepare($query);
             $stmt->bindValue(1, $user->getNome());
             $stmt->bindValue(2, $user->getSobrenome());
@@ -15,6 +14,9 @@
             $stmt->bindValue(7, $user->getImagem());
             $stmt->bindValue(8, $user->getToken());
             $stmt->execute();
+           }catch (PDOException $e){
+            echo "Erro na inserção de dados " . $e->getMessage();
+           }
         }
         public static function selectAll(){
             $conexao = Conexao::conectar();
@@ -46,9 +48,9 @@
             cpfUser  = ?,
             nascUser = ?, 
             emailUser = ?, 
-            passwordUser = ?, 
+            senhaUser = ?, 
             imagemUser = ?, 
-            tokenUser = ? 
+            token = ? 
             WHERE idUser = ?";
             $stmt = $conexao->prepare($query);
             $stmt->bindValue(1, $user->getNome());
@@ -63,13 +65,13 @@
             return $stmt->execute();
         }
         public static function checkCredentials($email, $senha){
-            $conexao = Conexao::conectar();
+            /* $conexao = Conexao::conectar();
             $query = "SELECT * FROM tbUser WHERE emailUser = ? and passwordUser = ?";
             $stmt = $conexao->prepare($query);
             $stmt->bindValue(1, $email);
             $stmt->bindValue(2, $senha);
             $stmt->execute();
-            return $stmt->fetch(PDO::FETCH_ASSOC);
+            return $stmt->fetch(PDO::FETCH_ASSOC); */
         }
 
     }

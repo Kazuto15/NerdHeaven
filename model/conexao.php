@@ -5,7 +5,7 @@
         {
         //informações do banco de dados
         $servidor="localhost";
-        $banco="NerdHeaven";
+        $banco="nerdheaven";
         $usuario="root";
         $senha="";
 

@@ -1,0 +1,17 @@
+.footer {
+    background-color: black;
+    height: 15vh;
+    font-size: 12px;
+    font-weight: 500;
+    position: relative;
+    bottom: 10%;
+  }
+  
+  .footer a{
+    text-decoration: none;
+    color: white;
+  }
+  
+  .footer a:hover {
+    color: #b9b9b9;
+  }

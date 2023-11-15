@@ -55,7 +55,7 @@
                 <td><?=$user[0]?></td>
                 <td><?= date('d/m/Y', strtotime($user[4]));  ?></td>
                 <td><?=$user[1]?> <?=$user[2]?></td>
-                <td><?=$user[5]?></td>
+                <td><?=$user[4]?></td>
                 <td><?=$user[3]?></td>
                 <td class="text-center">
                   <form action="process.php" method="POST">

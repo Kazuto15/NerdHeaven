@@ -1,6 +1,6 @@
 <?php
  require_once ('../../dao/UserDao.php');
- require_once __DIR__.'../../model/User.php';
+ require_once __DIR__.'../../../model/User.php';
 
  $user = new User();
 
