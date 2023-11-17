@@ -1,13 +1,8 @@
-<!-- <nav class="navbar navbar-light bg-light">
-  <a class="navbar-brand" href="#">
-    <img src="/docs/4.0/assets/brand/bootstrap-solid.svg" width="30" height="30" class="d-inline-block align-top" alt="">
-    Bootstrap
-  </a>
-</nav> -->
+
     <link rel="stylesheet" href="../css/header.css">
     <link rel="stylesheet" href="../css/geral.css">
-    <link rel="stylesheet" href="../css/custom.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="../css/custom.css">
 <nav class="navbar navabar-expand-sm navbar-light nav_cor" id="nav-maximized">
   <div class="container">
     <a class="navbar-brand no-link" href="home.php">
@@ -29,46 +24,46 @@
           <a class="nav-link text-white" href="sobre.php">Sobre nós</a>
         </li>
         <div class="d-grid gap-2 d-md-flex justify-content-md-end">
-          <button class="nav-item btn"id="login" type="button"><a href="./login.php">Login</a></button>
-          <button class="nav-item btn" id="registra" type="button"><a href="./registro.php">Registrar-se</a></button>
+          <button class="nav-item btn"id="login" type="button"><a href="login.php">Login</a></button>
+          <button class="nav-item btn" id="registra" type="button"><a href="registro.php">Registrar-se</a></button>
         </div>
       </ul>
     </div>
   </div>
 </nav>
 
-<nav class="navbar bg-body-tertiary fixed-top" id="nav-minimized">
+<nav class="navbar fixed-top" id="nav-minimized">
   <div class="container-fluid">
-  <a class="navbar-brand" href="#">
+  <a class="navbar-brand text-white" href="#">
     <img src="../imgs/header_user/Logo.png" width="30" height="30" class="d-inline-block align-top rounded-circle" alt="">
     NerdHeaven
   </a>
     <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
-    <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
-      <div class="offcanvas-header">
+    <div class="offcanvas offcanvas-end bg-dark text-white" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
+      <div class="offcanvas-header bordaBaixo">
         <h5 class="offcanvas-title" id="offcanvasNavbarLabel">NerdHeaven</h5>
         <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
       </div>
-      <div class="offcanvas-body">
+      <div class="offcanvas-body text-white">
         <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
           <li class="nav-item homeMobile">
-            <a class="nav-link active" aria-current="page" href="../area-cliente/home.php">Home</a>
+            <a class="nav-link active text-white" aria-current="page" href="../area-cliente/home.php">Home</a>
           </li>
           <li class="nav-item homeMobile">
-            <a class="nav-link active" aria-current="page" href="../area-cliente/produtos.php">Produtos</a>
+            <a class="nav-link active text-white" aria-current="page" href="../area-cliente/produtos.php">Produtos</a>
           </li>
           <li class="nav-item homeMobile">
-            <form class="d-flex mt-3" role="search">
+            <a class="nav-link active text-white" aria-current="page" href="../area-cliente/contatos.php">Contato</a>
+          </li>
+          <li class="nav-item homeMobile">
+            <a class="nav-link active text-white" aria-current="page" href="../area-cliente/sobre.php">Sobre nos</a>
+          </li>
+        <!--   <form class="d-flex mt-3" role="search">
               <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
               <button class="btn btn-outline-success" type="submit">Search</button>
-            </form>
-            <a class="nav-link active" aria-current="page" href="../area-cliente/contatos.php">Contato</a>
-          </li>
-          <li class="nav-item homeMobile">
-            <a class="nav-link active" aria-current="page" href="../area-cliente/sobre.php">Sobre nos</a>
-          </li>
+            </form> -->
         </ul>
       </div>
     </div>

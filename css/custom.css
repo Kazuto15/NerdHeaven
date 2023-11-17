@@ -1,3 +1,7 @@
-.offcanvas {
-    background-color:  #ff5; /* Substitua "your-color" pela cor desejada */
+#nav-minimized{
+    background-color: rgba(0, 0, 0, 0.555);
+}
+
+.bordaBaixo{
+    border-bottom: 2px solid white;
 }

@@ -1,0 +1,75 @@
+html{
+    background-color: rgb(253, 253, 253);
+}
+.box{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: rgba(0, 0, 0, 0.8);
+    padding: 30px;
+    padding-left: 20px;
+    padding-right: 20px;
+    border-radius: 15px;
+    width: 30%;
+    color: whitesmoke;
+}
+fieldset{
+    border: 2px solid rgb(240, 236, 20);
+    border-radius: 10px;
+}
+legend{
+    border: 1px solid rgb(233, 214, 40);
+    text-align: center;
+    padding: 10px;
+    background-color: dodgerblue;
+    border-radius: 6px;
+    color: whitesmoke;
+    margin-bottom: 10%;
+}
+.inputBox{
+    position: relative;
+    margin-bottom: 30px;
+
+}
+.inputUser{
+    background: none;
+    border: none;
+    border-bottom: 1px solid skyblue;
+    outline: none;
+    color: white;
+    font-size: 17px;
+    width: 100%;
+    letter-spacing: 2px; 
+}
+.labelInput{
+    position: absolute;
+    top: 0;
+    left: 0;
+    pointer-events: none;
+    transition: .2s;
+}
+.inputUser:focus ~ .labelInput, .inputUser:valid ~ .labelInput{
+    top: -50%;
+    font-size: 12px;
+}
+
+#nasc{
+    border: none;
+    border-radius: 5px;
+    padding: 3%;
+
+    outline: none;
+}
+#submit{
+    background-image: linear-gradient(to right, rgb(0, 92, 197), rgba(90, 20, 220));
+    width: 100%;
+    border: none;
+    padding: 15px;
+    border-radius: 10px;
+    color: ghostwhite;
+    cursor: pointer;
+}   
+#submit:hover{
+    background-image: linear-gradient(to right,rgb(0, 80, 172), rgb(80, 19, 195));
+}

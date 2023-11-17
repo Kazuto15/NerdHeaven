@@ -1,10 +1,16 @@
-
+@media (max-width:768px){
+    .navbar-nav{
+        display: none;
+    }
+}
 
 .nav_cor{
 background-color: rgba(0, 0, 0, 0.555);
 }
 nav {
     height: 70px;
+    
+    box-shadow: 2px 2px 15px black;
   }
 #logo{
     position: relative;
@@ -92,10 +98,5 @@ nav {
 .produtoMobile{
     position: relative;
     background-color: red;
-}
-@media (max-width:768px){
-    .navbar-nav{
-        display: none;
-    }
 }
 
