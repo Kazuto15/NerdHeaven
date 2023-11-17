@@ -3,7 +3,7 @@
     class AdminDao{
         public static function insert($admin){
             $conexao = Conexao::conectar();
-            $query = "INSERT INTO tbAdmin (nomeUser, sobrenomeUser, cpfUser, nascUser, emailUser, senhaUser, tokenUser, imagemUser ) VALUES (?,?,?,?,?,?,?,?)";
+            $query = "INSERT INTO tbAdmin (nomeAdmin, sobrenomeAdmin, cpfAdmin, nascAdmin, emailAdmin, senhaAdmin, tokenAdmin, imagemAdmin ) VALUES (?,?,?,?,?,?,?,?)";
             $stmt = $conexao->prepare($query);
             $stmt->bindValue(1, $admin->getNome());
             $stmt->bindValue(2, $admin->getSobrenome());
@@ -47,13 +47,13 @@
             $query = "UPDATE tbAdmin SET 
             nomeAdmin = ?, 
             sobrenomeAdmin = ?, 
-            cpfAdmin = ?,
+            cpfAdmin  = ?,
             nascAdmin = ?, 
             emailAdmin = ?, 
             senhaAdmin = ?, 
             imagemAdmin = ?, 
             tokenAdmin = ? 
-            WHERE idAdmin = ?";
+            WHERE idUser = ?";
             $stmt = $conexao->prepare($query);
             $stmt->bindValue(1, $admin->getNome());
             $stmt->bindValue(2, $admin->getSobrenome());
