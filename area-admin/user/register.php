@@ -2,14 +2,14 @@
   require_once("../../model/User.php");
   require_once '../../dao/UserDao.php';
   if(!empty($_POST)){
-    $id_User = $userDao['idUser'];
-    $nome_User =  $userDao['nomeUser'];
-    $sobrenome_User = $userDao['sobrenomeUser'];
-    $cpf_User = $userDao['cpfUser'];
-    $nasc_User= $userDao['nascUser'];
-    $email_User = $userDao['emailUser'];
-    $password_User = $userDao['senhaUser'];
-    $imagem_User = $userDao['imagemUser'];
+    $id_User = $_POST['idUser'];
+    $nome_User = $_POST['nome'];
+    $sobrenome_User = $_POST['sobrenome'];
+    $cpf_User = $_POST['cpf'];
+    $nasc_User = $_POST['nasc'];
+    $email_User = $_POST['email'];
+    $password_User = $_POST['senha'];
+    $imagem_User = $_POST['nomeFoto'];
     }else{
       $nome_User = '';
       $sobrenome_User = '';
@@ -84,7 +84,7 @@
                   </div>
                   <div class="col-md-3 mb-3">
                     <label for="cpf" class="col-form-label">CPF:</label>
-                    <input type="text" class="form-control" name="cpf" maxlength="50" id="cpf"
+                    <input type="text" class="form-control" name="cpf" maxlength="14" id="cpf"
                       data-mask="000.000.000-00" data-mask-selectonfocus="true" value="<?=$cpf_User?>" required>
                     <div class="invalid-feedback">
                       CPF Inválido
@@ -109,7 +109,7 @@
                   </div>
                   <div class="col-md-3">
                     <label for="senha" class="col-form-label">Senha:</label>
-                    <input type="password" class="form-control" name="senha" value="<?=$password_User?>" maxlength="10"
+                    <input type="password" class="form-control" name="senha" value="<?=$password_User?>" maxlength="20"
                       id="senha" required>
                     <div class="invalid-feedback">
                       Senha Inválido

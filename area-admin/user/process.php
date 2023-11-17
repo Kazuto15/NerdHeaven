@@ -4,7 +4,7 @@
 
  $user = new User();
 
-  //var_dump($_POST); 
+  var_dump($_POST); 
 
 
  switch ($_POST["acao"]) {
@@ -17,7 +17,7 @@
     }
     break;
 
-  case 'Salvar':
+  case 'SALVAR':
     //pode validar as informações
     $user->setNome($_POST['nome']);
     $user->setSobrenome($_POST['sobrenome']);
@@ -25,16 +25,16 @@
     $user->setNasc($_POST['nasc']);
     $user->setEmail($_POST['email']);
     $user->setPassword($_POST['senha']);
-    //$user->setImagem($user->salvarImagem($_POST['nomeFoto'])); 
+    $user->setImagem($user->salvarImagem($_POST['nomeFoto'])); 
     $user->setToken($user->generateToken());
     try {
       $userDao = UserDao::insert($user);
       //$msg->setMensagem("Usuário Salvo com sucesso.", "bg-success");
-      header("Location: index.php");
+      //header("Location: index.php");
     } catch (Exception $e) {
-     // echo 'Exceção capturada: ',  $e->getMessage(), "\n";
+      echo 'Exceção capturada: ',  $e->getMessage(), "\n";
       //$msg->setMensagem("Verifique os dados Digitados.", "bg-danger");
-      header("Location: register.php");
+      //header("Location: register.php");
     } 
     break;
   case 'ATUALIZAR':
@@ -45,7 +45,7 @@
         $user->setNasc($_POST['nasc']);
         $user->setEmail($_POST['email']);
         $user->setPassword($_POST['senha']);
-        //$user->setImagem($user->salvarImagem($_POST['nomeFoto'])); 
+        $user->setImagem($user->salvarImagem($_POST['nomeFoto'])); 
         $user->setToken($user->generateToken());
         try {
           $userDao = UserDao::update($_POST["idUser"], $user);

@@ -2,21 +2,24 @@
     require_once __DIR__.'../../model/Conexao.php';
     class UserDao{
         public static function insert($user){
-           try{ $conexao = Conexao::conectar();
-            $query = "INSERT INTO tbUser (nomeUser, sobrenomeUser, cpfUser, nascUser, emailUser, senhaUser, tokenUser,imagemUser ) VALUES (?,?,?,?,?,?,?,?)";
+            $conexao = Conexao::conectar();
+            $query = "INSERT INTO tbUser (nomeUser, sobrenomeUser, cpfUser, nascUser, emailUser, senhaUser, tokenUser, imagemUser ) VALUES (?,?,?,?,?,?,?,?)";
             $stmt = $conexao->prepare($query);
             $stmt->bindValue(1, $user->getNome());
             $stmt->bindValue(2, $user->getSobrenome());
-            $stmt->bindValue(3, $user->getCPF());
+            var_dump($user->getcpf());
+            $stmt->bindValue(3, $user->getCpf());
             $stmt->bindValue(4, $user->getNasc());
             $stmt->bindValue(5, $user->getEmail());
             $stmt->bindValue(6, $user->getPassword());
             $stmt->bindValue(7, $user->getImagem());
             $stmt->bindValue(8, $user->getToken());
+            
+            try{
             $stmt->execute();
-           }catch (PDOException $e){
-            echo "Erro na inserção de dados " . $e->getMessage();
-           }
+            }catch (PDOException $e){
+                echo 'erro na inseção do usaário: '. $e->getMessage();
+            }
         }
         public static function selectAll(){
             $conexao = Conexao::conectar();
@@ -50,7 +53,7 @@
             emailUser = ?, 
             senhaUser = ?, 
             imagemUser = ?, 
-            token = ? 
+            tokenUser = ? 
             WHERE idUser = ?";
             $stmt = $conexao->prepare($query);
             $stmt->bindValue(1, $user->getNome());
