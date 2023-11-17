@@ -7,7 +7,6 @@
             $stmt = $conexao->prepare($query);
             $stmt->bindValue(1, $user->getNome());
             $stmt->bindValue(2, $user->getSobrenome());
-            var_dump($user->getcpf());
             $stmt->bindValue(3, $user->getCpf());
             $stmt->bindValue(4, $user->getNasc());
             $stmt->bindValue(5, $user->getEmail());
@@ -58,7 +57,7 @@
             $stmt = $conexao->prepare($query);
             $stmt->bindValue(1, $user->getNome());
             $stmt->bindValue(2, $user->getSobrenome());
-            $stmt->bindValue(3, $user->getCPF());
+            $stmt->bindValue(3, $user->getCpf());
             $stmt->bindValue(4, $user->getNasc());
             $stmt->bindValue(5, $user->getEmail());
             $stmt->bindValue(6, $user->getPassword());

@@ -2,14 +2,14 @@
   require_once("../../model/User.php");
   require_once '../../dao/UserDao.php';
   if(!empty($_POST)){
-    $id_User = $_POST['idUser'];
-    $nome_User = $_POST['nome'];
-    $sobrenome_User = $_POST['sobrenome'];
-    $cpf_User = $_POST['cpf'];
-    $nasc_User = $_POST['nasc'];
-    $email_User = $_POST['email'];
-    $password_User = $_POST['senha'];
-    $imagem_User = $_POST['nomeFoto'];
+    $id_User = $userDao['idUser'];
+    $nome_User =  $userDao['nomeUser'];
+    $sobrenome_User = $userDao['sobrenomeUser'];
+    $cpf_User = $userDao['cpfUser'];
+    $nasc_User= $userDao['nascUser'];
+    $email_User = $userDao['emailUser'];
+    $password_User = $userDao['senhaUser'];
+    $imagem_User = $userDao['imagemUser'];
     }else{
       $nome_User = '';
       $sobrenome_User = '';

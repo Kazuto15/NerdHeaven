@@ -25,7 +25,7 @@
         }
        
         public function getCpf(){
-            return $this->id;
+            return $this->cpf;
         }
         public function setCpf($cpf){
             $this->cpf = $cpf; 
@@ -46,7 +46,7 @@
             return $this->password;
         }
         public function setPassword($password){
-            $this->$password = $password; 
+            $this->password = $password; 
         }
         public function getImagem(){
             return $this->imagem;
@@ -71,7 +71,7 @@
                 if($novo_nome == ""){
                     $novo_nome = md5(time()). ".jpg";
                 }
-                $diretorio = "../../img/user/";
+                $diretorio = "../../imgs/user/";
 
                 $nomeCompleto = $diretorio.$novo_nome;
 
