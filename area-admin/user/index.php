@@ -10,7 +10,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>FilmeOn - Adm</title>
+  <title>Nerdheaven - Adm</title>
   <link rel="short icon" href="./../../img/site/logo.png" />
   <!-- Bootstrap -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
@@ -67,9 +67,13 @@
                   </form>
                 </td>
                 <td class="text-center ">
-                  <a class="dropdown-item" onclick="modalRemover(<?=$user[0]?>,'idDeletar')">
-                    <i class="fas fa-trash-alt fa-lg text-danger"></i>
-                  </a>
+                <form action="process.php" method="POST">
+                    <input type="hidden" class="form-control" id="acao" name="acao" value="DELETE">
+                    <input type="hidden" class="form-control" id="idDeletar" name="idDeletar" value="<?=$user[0]?>">
+                    <button type="submit" class="dropdown-item" ><i
+                        class="fas fa-trash fa-lg text-danger"></i>
+                    </button>
+                  </form>
                 </td>
               <tr>
                 <?php } ?>

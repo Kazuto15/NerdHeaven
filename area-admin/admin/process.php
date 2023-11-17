@@ -1,8 +1,10 @@
 <?php
-  require_once(__DIR__.'../../../model/Admin.php');
   require_once("../../dao/AdminDao.php");
+  require_once(__DIR__.'../../../model/Admin.php');
   
   $admin = new Admin();
+
+
  switch ($_POST["acao"]) {
   case 'DELETE':
    try {

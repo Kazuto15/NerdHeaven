@@ -53,7 +53,7 @@
             senhaAdmin = ?, 
             imagemAdmin = ?, 
             tokenAdmin = ? 
-            WHERE idUser = ?";
+            WHERE idAdmin = ?";
             $stmt = $conexao->prepare($query);
             $stmt->bindValue(1, $admin->getNome());
             $stmt->bindValue(2, $admin->getSobrenome());
@@ -67,13 +67,13 @@
             return $stmt->execute();
         }
         public static function checkCredentials($email, $senha){
-            /* $conexao = Conexao::conectar();
-            $query = "SELECT * FROM tbUser WHERE emailUser = ? and passwordUser = ?";
+            $conexao = Conexao::conectar();
+            $query = "SELECT * FROM tbAdmin WHERE emailAdmin = ? and passwordAdmin = ?";
             $stmt = $conexao->prepare($query);
             $stmt->bindValue(1, $email);
             $stmt->bindValue(2, $senha);
             $stmt->execute();
-            return $stmt->fetch(PDO::FETCH_ASSOC); */
+            return $stmt->fetch(PDO::FETCH_ASSOC);
         }
 
     }
