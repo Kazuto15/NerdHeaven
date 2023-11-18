@@ -1,8 +1,8 @@
 <?php
-  require_once("../../dao/AdminDao.php");
-  require_once(__DIR__.'../../../model/Admin.php');
-  
-  $admin = new Admin();
+ require_once ('../../dao/AdminDao.php');
+ require_once __DIR__.'../../../model/Admin.php';
+
+ $admin = new Admin();
 
 
  switch ($_POST["acao"]) {
@@ -11,7 +11,7 @@
         $adminDao = AdminDao::delete($_POST['idDeletar']);
         header("Location: index.php");
     } catch (Exception $e) {
-      echo 'Exceção capturada: ',  $e->getMessage(), "\n"; 
+      //echo 'Exceção capturada: ',  $e->getMessage(), "\n";
     }
     break;
 
@@ -27,10 +27,12 @@
     $admin->setToken($admin->generateToken());
     try {
       $adminDao = AdminDao::insert($admin);
+      //$msg->setMensagem("Usuário Salvo com sucesso.", "bg-success");
       header("Location: index.php");
     } catch (Exception $e) {
-     // echo 'Exceção capturada: ',  $e->getMessage(), "\n";
-        header("Location: register.php");
+      echo 'Exceção capturada: ',  $e->getMessage(), "\n";
+      //$msg->setMensagem("Verifique os dados Digitados.", "bg-danger");
+      header("Location: register.php");
     } 
     break;
   case 'ATUALIZAR':
@@ -45,8 +47,8 @@
         $admin->setToken($admin->generateToken());
         try {
           $adminDao = AdminDao::update($_POST["idAdmin"], $admin);
-        
-          header("Location:index.php");
+          //$msg->setMensagem("Usuário Atualizado com sucesso.", "bg-success");
+          header("Location: index.php");
         } catch (Exception $e) {
          echo 'Exceção capturada: ',  $e->getMessage(), "\n";
 
@@ -60,7 +62,7 @@
         // Configura as opções do contexto da solicitação
         include('register.php');
     } catch (Exception $e) {
-        echo 'Exceção capturada: ',  $e->getMessage(), "\n";
+        //echo 'Exceção capturada: ',  $e->getMessage(), "\n";
     } 
 
   
@@ -68,12 +70,5 @@
 
 
   }
-
-
-
-
-
-
-
 
 ?>

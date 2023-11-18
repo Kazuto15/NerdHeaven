@@ -17,7 +17,7 @@
             try{
             $stmt->execute();
             }catch (PDOException $e){
-                echo 'erro na inseção do usaário: '. $e->getMessage();
+                echo 'erro na inseção do usuário: '. $e->getMessage();
             }
         }
         public static function selectAll(){
@@ -37,7 +37,7 @@
         }
         public static function delete($id){
             $conexao = Conexao::conectar();
-            $query = "DELETE FROM tbAdmin WHERE idAdmin = ?";
+            $query = "DELETE FROM tbAdmin WHERE idAdmin= ?";
             $stmt = $conexao->prepare($query);
             $stmt->bindValue(1, $id);
             return  $stmt->execute();
