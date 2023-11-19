@@ -12,5 +12,9 @@
       <a class="link-dark" href="../admin" style="text-decoration: none;"><i class="fas fa-user"></i>
         Admin</a>
     </li>
+    <li class="fw-medium my-1">
+      <a class="link-dark" href="../produtos" style="text-decoration: none;"><i class="fas fa-store"></i>
+        Produtos</a>
+    </li>
   </ul>
 </div>
