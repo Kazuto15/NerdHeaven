@@ -63,15 +63,6 @@
                 <p>Preco: R$19,99</p>
             </div>
         </div>
-        <div class="product-card">
-            <div class="product-image">
-                <img src="../imgs/fundo_user/fundo_produtos.jpeg" alt="">
-            </div>
-            <div class="product-info">
-                <h3>Produto</h3>
-                <p>Preco: R$19,99</p>
-            </div>
-        </div>
-       
+        
 </body>
 </html>
