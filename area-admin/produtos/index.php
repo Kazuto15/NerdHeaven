@@ -1,5 +1,4 @@
-<?php 
-
+<?php
   require_once '../../dao/ProdutoDao.php'; 
   $produtos = ProdutoDao::selectAll();
 ?>
@@ -69,7 +68,7 @@
                 <td class="text-center ">
                 <form action="process.php" method="POST">
                     <input type="hidden" class="form-control" id="acao" name="acao" value="DELETE">
-                    <input type="hidden" class="form-control" id="idDeletar" name="idDeletar" value="<?=$user[0]?>">
+                    <input type="hidden" class="form-control" id="idDeletar" name="idDeletar" value="<?=$produto[0]?>">
                     <button type="submit" class="dropdown-item" ><i
                         class="fas fa-trash fa-lg text-danger"></i>
                     </button>

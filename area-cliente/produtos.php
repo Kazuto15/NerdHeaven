@@ -1,3 +1,7 @@
+<?php 
+ /*  require_once __DIR__.'/../dao/ProdutoDao.php'; 
+  $produtos = ProdutoDao::selectAll(); */
+?>
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>

@@ -2,7 +2,7 @@
 require_once("../../model/Produtos.php");
 require_once ('../../dao/ProdutoDao.php');
 if(!empty($_POST)){
-  $idAdmin = $produtoDao['idProduto'];
+  $idProduto = $produtoDao['idProduto'];
   $nome =  $produtoDao['nomeProduto'];
   $qntd = $produtoDao['qntdProduto'];
   $preco = $produtoDao['precoProduto'];
@@ -58,7 +58,7 @@ if(!empty($_POST)){
           <div class="card-body row" style="align-items: center; justify-content: center;">
             <div class="col-md-2   text-center" >
               <div class="bg-white rounded border" >
-                <img id="preview" src="../../imgs/admin/<?=$imagem_Produto!="" ? $imagem_Produto : 'padrao.png';?>" alt="..."
+                <img id="preview" src="../../imgs/produtos/<?=$imagem_Produto!="" ? $imagem_Produto : 'padrao.jpg';?>" alt="..."
                   class="rounded  w-100  "  style="height:200px; object-fit: cover; border:4px solid #ccc" >
               </div>
             </div>
@@ -83,17 +83,23 @@ if(!empty($_POST)){
                 <div class="col-md-3 mb-3">
                   <label for="preco" class="col-form-label">Preço:</label>
                   <input type="text" class="form-control" name="preco" maxlength="14" id="preco"
-                    data-mask="R$00,00" data-mask-selectonfocus="true" value="<?=$preco?>" required>
+                     value="<?=$preco?>" required>
                   <div class="invalid-feedback">
                     Adicione o preço
                   </div>
                 </div>
                 <div class="col-md-3 mb-3">
                   <label for="tipoProduto" class="col-form-label">Tipo de produto:</label>
-                  <input type="text" class="form-control" name="tipoProduto" maxlength="50" id="tipoProduto"
-                     value="<?=$tipoProduto?>" required>
+                  <select class="form-control" name="tipoCategoria" id="tipoCategoria" value="<?$tipoProduto?>" required>
+                    <option value=""></option>
+                    <option value="camisa">Camisa</option>
+                    <option value="funkoPop">Funko Pop</option>
+                    <option value="colecionaveis">Colecionáveis</option>
+                    <option value="luminarias">Luminárias</option>
+                    <option value="quadros">Quadros</option>
+                  </select>
                   <div class="invalid-feedback">
-                    Adicione o tipo de produto
+                    Selecione o tipo de produto
                   </div>
                 </div>
               </div>

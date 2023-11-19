@@ -5,12 +5,13 @@
 }
 
 .nav_cor{
-background-color: rgba(0, 0, 0, 0.555);
+background-color: rgba(0, 0, 0, 0.712);
+
 }
 nav {
     height: 70px;
-    
     box-shadow: 2px 2px 15px black;
+    border-bottom: 3px solid black;
   }
 #logo{
     position: relative;

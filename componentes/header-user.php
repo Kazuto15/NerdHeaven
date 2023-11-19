@@ -33,7 +33,7 @@
 </nav>
 
 <nav class="navbar fixed-top" id="nav-minimized">
-  <div class="container-fluid">
+  <div class="container-fluid bg-black">
   <a class="navbar-brand text-white" href="#">
     <img src="../imgs/header_user/Logo.png" width="30" height="30" class="d-inline-block align-top rounded-circle" alt="">
     NerdHeaven

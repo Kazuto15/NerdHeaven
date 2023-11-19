@@ -1,12 +1,11 @@
 <?php
-
 require_once('../../model/Conexao.php');
 
 class ProdutoDao
 {
     public static function cadastrarProduto($produto){
         $conexao = Conexao::conectar();
-        $query = "INSERT INTO tbProduto (nomeProduto,descProdut0,precoProduto,qntdProduto,imagemProduto,TipoProduto) VALUES (?,?,?,?,?,?)";
+        $query = "INSERT INTO tbProduto (nomeProduto,descProduto,precoProduto,qntdProduto,imagemProduto,TipoProduto) VALUES (?,?,?,?,?,?)";
         $stmt = $conexao->prepare($query);
         $stmt->bindValue(1, $produto->getNome());
         $stmt->bindValue(2, $produto->getDesc());
@@ -17,12 +16,11 @@ class ProdutoDao
         try{
             $stmt->execute();
         }catch (PDOException $e){
-            echo "Erro:".$e->getMessage();  
+            echo "Erro ao cadastrar o produto: ".$e->getMessage();  
         }
     }
 
-    public static function selectAll()
-    {
+    public static function selectAll(){
         $conexao = Conexao::conectar();
         $query = "SELECT * FROM tbProduto";
         $stmt = $conexao->prepare($query);
