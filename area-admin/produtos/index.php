@@ -53,9 +53,9 @@
               <tr>
                 <td><?=$produto[0]?></td>
                 <td><?=$produto[1]?></td>
-                <td><?=$produto[4]?></td>
+                <td><?=$produto[4]?> Unidades</td>
                 <td><?=$produto[6]?></td>
-                <td><?=$produto[3]?></td>
+                <td>R$ <?=$produto[3]?></td>
                 <td class="text-center">
                   <form action="process.php" method="POST">
                     <input type="hidden" class="form-control" id="acao" name="acao" value="SELECTID">

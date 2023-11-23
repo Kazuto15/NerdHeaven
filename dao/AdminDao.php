@@ -1,5 +1,6 @@
 <?php
     require_once __DIR__.'../../model/Conexao.php';
+    
     class AdminDao{
         public static function insert($admin){
             $conexao = Conexao::conectar();

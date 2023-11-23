@@ -1,8 +1,7 @@
 <?php
-require_once('../../model/Conexao.php');
+require_once(__DIR__ . '../../model/Conexao.php');
 
-class ProdutoDao
-{
+class ProdutoDao{
     public static function cadastrarProduto($produto){
         $conexao = Conexao::conectar();
         $query = "INSERT INTO tbProduto (nomeProduto,descProduto,precoProduto,qntdProduto,imagemProduto,TipoProduto) VALUES (?,?,?,?,?,?)";
@@ -49,8 +48,8 @@ class ProdutoDao
         descProduto= ?, 
         precoProduto= ?,
         qntdProduto= ?, 
-        imagemUser = ?, 
-        idTipoProduto= ? 
+        imagemProduto = ?, 
+        TipoProduto= ? 
         WHERE idProduto = ?";
         $stmt = $conexao->prepare($query);
         $stmt->bindValue(1, $produto->getNome());
@@ -58,11 +57,10 @@ class ProdutoDao
         $stmt->bindValue(3, $produto->getPreco());
         $stmt->bindValue(4, $produto->getQntd());
         $stmt->bindValue(5, $produto->getImagem());
-        $stmt->bindValue(6, $produto->getIdTipoProduto());
+        $stmt->bindValue(6, $produto->getTipoProduto());
         $stmt->bindValue(7, $id); // Certifique-se de que o ID seja o terceiro valor
         return $stmt->execute();
     }
-
 }
     // Adicione métodos para atualizar, excluir, obter por ID, etc.
 ?>

@@ -1,5 +1,5 @@
 
-    <link rel="stylesheet" href="../css/header.css">
+<link rel="stylesheet" href="../css/header.css">
     <link rel="stylesheet" href="../css/geral.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="../css/custom.css">
@@ -23,10 +23,7 @@
         <li class="nav-item sobre">
           <a class="nav-link text-white" href="sobre.php">Sobre nós</a>
         </li>
-        <div class="d-grid gap-2 d-md-flex justify-content-md-end">
-          <button class="nav-item btn"id="login" type="button"><a href="login.php">Login</a></button>
-          <button class="nav-item btn" id="registra" type="button"><a href="registro.php">Registrar-se</a></button>
-        </div>
+       
       </ul>
     </div>
   </div>
@@ -60,11 +57,11 @@
           <li class="nav-item homeMobile">
             <a class="nav-link active text-white" aria-current="page" href="../area-cliente/sobre.php">Sobre nós</a>
           </li>
+          
         <!--   <form class="d-flex mt-3" role="search">
               <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
               <button class="btn btn-outline-success" type="submit">Search</button>
             </form> -->
-            
         </ul>
         
       </div>

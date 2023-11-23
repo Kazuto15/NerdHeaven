@@ -5,16 +5,14 @@
     
         include_once('config.php');
 
-        $id_User = $userDao['idUser'];
-        $nome_User =  $userDao['nomeUser'];
-        $sobrenome_User = $userDao['sobrenomeUser'];
-        $cpf_User = $userDao['cpfUser'];
-        $nasc_User= $userDao['nascUser'];
-        $email_User = $userDao['emailUser'];
-        $password_User = $userDao['senhaUser'];
-        $imagem_User = $userDao['imagemUser'];
+        $nome = $_POST['nome'];
+        $sobrenome = $_POST['sobrenome'];
+        $email = $_POST['email'];
+        $senha = $_POST['senha'];
+        $cpf = $_POST['cpf'];
+        $nasc = $_POST['nasc'];
 
-        $result = mysqli_query($conexao, "INSERT INTO tbUser(nomeUser,sobrenomeUser,cpfUser,NascUser,emailUser,senhaSenha) 
+        $result = mysqli_query($conexao, "INSERT INTO cadastro(nome,sobrenome,cpf,Nasc,email,senha) 
         VALUES ('$nome','$sobrenome','$cpf','$nasc','$email','$senha')");
     }
 ?>
@@ -34,11 +32,6 @@
         <form action="telaCadastro.php" method="POST">
             <fieldset>
                 <legend><b>Formulario de clientes</b></legend>
-                <div class="inputBox">
-                    <input type="text" name="sobrenome" id="sobrenome" class="inputUser" required>
-                    <label for="sobrenome" class="labelInput">Sobrenome</label>
-                </div>
-                
                 <div class="inputBox">
                     <input type="text" name="nome" id="nome" class="inputUser" required>
                     <label for="nome" class="labelInput">Nome</label>

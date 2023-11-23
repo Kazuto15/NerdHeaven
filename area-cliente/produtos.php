@@ -1,6 +1,6 @@
 <?php 
- /*  require_once __DIR__.'/../dao/ProdutoDao.php'; 
-  $produtos = ProdutoDao::selectAll(); */
+  require_once '../dao/ProdutoDao.php'; 
+  $produtos = ProdutoDao::selectAll();
 ?>
 <!DOCTYPE html>
 <html lang="pt-br">
@@ -17,52 +17,15 @@
         require_once("../componentes/header-user.php")
     ?>
     <div class="container-cards">
-        <div class="product-card">
+      <!--   <div class="product-card">
             <div class="product-image">
-                <img src="../imgs/fundo_user/produtos.jpg" alt="">
-            </div>
+            <img id="preview" src="../../imgs/product/<?=$imagem_Produto!="" ? $imagem_Produto : 'padrao.jpg';?>" alt="..."
+                  class="rounded  w-100  "  style="height:200px; object-fit: cover; border:4px solid #ccc" >            </div>
             <div class="product-info">
-                <h3>Produto</h3>
-                <p>Preco: R$19,99</p>
+                <h6><?=$produto[1]?></h6>
+                <p><?=$produto[4]?></p>
             </div>
-        </div>
-
-        <div class="product-card">
-            <div class="product-image">
-                <img src="../imgs/fundo_user/fundo.jpeg" alt="">
-            </div>
-            <div class="product-info">
-                <h3>Produto</h3>
-                <p>Preco: R$19,99</p>
-            </div>
-        </div>
-        <div class="product-card">
-            <div class="product-image">
-                <img src="../imgs/fundo_user/produtos (2).jpg" alt="">
-            </div>
-            <div class="product-info">
-                <h3>Produto</h3>
-                <p>Preco: R$19,99</p>
-            </div>
-        </div>
-        <div class="product-card">
-            <div class="product-image">
-                <img src="../imgs/fundo_user/produtos (1).jpg" alt="">
-            </div>
-            <div class="product-info">
-                <h3>Produto</h3>
-                <p>Preco: R$19,99</p>
-            </div>
-        </div>
-        <div class="product-card">
-            <div class="product-image">
-                <img src="../imgs/fundo_user/fundo_produtos.jpeg" alt="">
-            </div>
-            <div class="product-info">
-                <h3>Produto</h3>
-                <p>Preco: R$19,99</p>
-            </div>
-        </div>
+        </div> -->
         
 </body>
 </html>

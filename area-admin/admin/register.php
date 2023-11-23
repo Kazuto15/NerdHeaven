@@ -53,7 +53,7 @@
             <div class="card-header">
               <strong>INFORMAÇÕES DO ADMINISTRADORES</strong>
               <input type="hidden" name="idAdmin" id="idAdmin" placeholder="id" value="<?=$id_Admin?>">
-              <input type="hidden" name="nomeFoto" id="nomeFoto" placeholder="nome foto" value="<?=$imagem_Admin?>">
+              <input type="text" name="nomeFoto" id="nomeFoto" placeholder="nome foto" value="<?=$imagem_Admin?>">
               <input type="hidden" value="<?=$id_Admin?'ATUALIZAR':'SALVAR'?>" name="acao" >
 
             </div>

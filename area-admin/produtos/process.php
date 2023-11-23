@@ -26,10 +26,9 @@
       try {
         $produtoDao = ProdutoDao::cadastrarProduto($produto);
         //$msg->setMensagem("Usuário Salvo com sucesso.", "bg-success");
-        echo 'Exceção capturada: ',  $e->getMessage(), "\n";
         header("Location: index.php");
       } catch (Exception $e) {
-        //echo 'Exceção capturada: ',  $e->getMessage(), "\n";
+        echo 'Exceção capturada: ',  $e->getMessage(), "\n";
         //$msg->setMensagem("Verifique os dados Digitados.", "bg-danger");
         header("Location: register.php");
       } 
@@ -53,14 +52,13 @@
       break;
 
     case 'SELECTID':
-
       try {
           $ProdutoDao = ProdutoDao::selectById($_POST['id']);
           // Configura as opções do contexto da solicitação
           include('register.php');
-      } catch (Exception $e) {
-          //echo 'Exceção capturada: ',  $e->getMessage(), "\n";
-      } 
+          } catch (Exception $e) {
+              //echo 'Exceção capturada: ',  $e->getMessage(), "\n";
+          } 
 
     
       break;

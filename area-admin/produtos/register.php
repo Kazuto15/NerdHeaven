@@ -1,23 +1,26 @@
 <?php 
-require_once("../../model/Produtos.php");
-require_once ('../../dao/ProdutoDao.php');
-if(!empty($_POST)){
-  $idProduto = $produtoDao['idProduto'];
-  $nome =  $produtoDao['nomeProduto'];
-  $qntd = $produtoDao['qntdProduto'];
-  $preco = $produtoDao['precoProduto'];
-  $tipoProduto= $produtoDao['tipoProduto'];
-  $descricao = $produtoDao['descricapProduto'];
-  $imagem_Produto = $produtoDao['imagemProduto'];
-  }else{
-    $nome = '';
-    $qntd = '';
-    $preco= '';
-    $tipoProduto = '';
-    $descricao= '';
-    $imagem_Produto = '';
-    $idProduto = '';
-  }
+  require_once("../../model/Produtos.php");
+  require_once ('../../dao/ProdutoDao.php');
+
+
+
+  if(!empty($_POST)){
+    $idProduto = $ProdutoDao['idProduto'];
+    $nome =  $ProdutoDao['nomeProduto'];
+    $qntd = $ProdutoDao['qntdProduto'];
+    $preco = $ProdutoDao['precoProduto'];
+    $tipoProduto= $ProdutoDao['TipoProduto'];
+    $descricao = $ProdutoDao['descProduto'];
+    $imagem_Produto = $ProdutoDao['imagemProduto'];
+    }else{
+      $nome = '';
+      $qntd = '';
+      $preco= '';
+      $tipoProduto = '';
+      $descricao= '';
+      $imagem_Produto = '';
+      $idProduto = '';
+    }
 
 
 ?>
@@ -50,15 +53,15 @@ if(!empty($_POST)){
         <form method="post" action="process.php" enctype="multipart/form-data" class="needs-validation" novalidate>
           <div class="card-header">
             <strong>INFORMAÇÕES DO PRODUTO</strong>
-            <input type="hidden" name="idProduto" id="idProduto" placeholder="id" value="<?=$id_Produto?>">
-            <input type="hidden" name="nomeFoto" id="nomeFoto" placeholder="nome foto" value="<?=$imagem_Produto?>">
-            <input type="hidden" value="<?=$id_Produto?'ATUALIZAR':'SALVAR'?>" name="acao" >
+            <input type="text" name="idProduto" id="idProduto" placeholder="id" value="<?=$idProduto?>">
+            <input type="text" name="nomeFoto" id="nomeFoto" placeholder="nome foto" value="<?=$imagem_Produto?>">
+            <input type="text" value="<?=$idProduto?'ATUALIZAR':'SALVAR'?>" name="acao" >
 
           </div>
           <div class="card-body row" style="align-items: center; justify-content: center;">
-            <div class="col-md-2   text-center" >
+            <div class="col-md-2   text-center">
               <div class="bg-white rounded border" >
-                <img id="preview" src="../../imgs/produtos/<?=$imagem_Produto!="" ? $imagem_Produto : 'padrao.jpg';?>" alt="..."
+                <img id="preview" src="../../imgs/product/<?=$imagem_Produto!="" ? $imagem_Produto : 'padrao.jpg';?>" alt="..."
                   class="rounded  w-100  "  style="height:200px; object-fit: cover; border:4px solid #ccc" >
               </div>
             </div>
@@ -90,13 +93,14 @@ if(!empty($_POST)){
                 </div>
                 <div class="col-md-3 mb-3">
                   <label for="tipoProduto" class="col-form-label">Tipo de produto:</label>
-                  <select class="form-control" name="tipoCategoria" id="tipoCategoria" value="<?$tipoProduto?>" required>
+                  <select class="form-control" name="tipoProduto" id="tipoCategoria" value="<?$tipoProduto?>" required>
                     <option value=""></option>
                     <option value="camisa">Camisa</option>
                     <option value="funkoPop">Funko Pop</option>
                     <option value="colecionaveis">Colecionáveis</option>
                     <option value="luminarias">Luminárias</option>
                     <option value="quadros">Quadros</option>
+                    <option value="quadros">Almofada</option>
                   </select>
                   <div class="invalid-feedback">
                     Selecione o tipo de produto

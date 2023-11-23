@@ -56,7 +56,7 @@
                 if($novo_nome == ""){
                     $novo_nome = md5(time()). ".jpg";
                 }
-                $diretorio = "../../imgs/produto/";
+                $diretorio = "../../imgs/product/";
 
                 $nomeCompleto = $diretorio.$novo_nome;
 
