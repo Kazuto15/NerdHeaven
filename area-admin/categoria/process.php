@@ -17,10 +17,9 @@
     break;
 
   case 'SALVAR':
-    var_dump($_POST);
 
     //pode validar as informações
-    $categoria->setNome($_POST['nomeCategoria']);
+    $categoria->setNomeCategoria($_POST['nomeCategoria']);
     $categoria->setDescCategoria($_POST['descCategoria']);
     
     try {
@@ -37,7 +36,7 @@
     
   case 'ATUALIZAR':
         //pode validar as informações
-        $categoria->getNome($_POST['nomeCategoria']);
+        $categoria->getNomeCategoria($_POST['nomeCategoria']);
         $categoria->getDescCategoria($_POST['descCategoria']);
         try {
           $categoriaDao = CategoriaDao::update($_POST["idCategoria"], $categoria);

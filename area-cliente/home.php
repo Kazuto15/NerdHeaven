@@ -1,3 +1,5 @@
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -8,10 +10,20 @@
     <link rel="stylesheet" href="./css/geral.css">
 </head>
 <body id="background">
-    <?php
-    require_once ("../componentes/header-user.php")
-    ?>
-    
+<?php
+session_start();
+
+// Verificar se o usuário está autenticado
+if (!isset($_SESSION['autenticado']) || $_SESSION['autenticado'] !== true) {
+    // Se não estiver autenticado, incluir a navbar para usuários não logados
+    include '../componentes/header-user.php';
+} else {
+    // Se estiver autenticado, incluir a navbar para usuários logados
+    include '../componentes/header-user-logado.php';
+}
+
+// O restante do código da página home aqui
+?>
     <div class="prop">
         <h3 class="justify-content-center text-white">Os melhores produtos Geek</h3>
 

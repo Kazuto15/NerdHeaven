@@ -20,34 +20,15 @@
         <?php foreach($produtos as $produto) { ?>
             <div class="product-card">
                 <div class="product-image">
-                    <img src="../imgs/produtos/<?$imagem_produto!= "" ? $imagem_produto : 'padrap.png';?>" alt="">
+                    <img src="<?= $produto['imagemProduto'] ?>" alt="">
                 </div>
                 <div class="product-info">
-                    <h3><?=$produto[1]?></h3>
-                    <p><?=$produto[2]?></p>
+                    <h3><?= $produto['nomeProduto'] ?></h3>
+                    <p>R$ <?= $produto['precoProduto'] ?></p>
                 </div>
             </div>
         <?php }?>
-            <div class="carousel-container" style="display: none;">
-                <div id="carouselExample" class="carousel slide" data-bs-ride="carousel">
-                    <div class="carousel-inner">
-                        <div class="carousel-item active">
-                            <div class="card-item">Conteúdo do Carrossel 1</div>
-                        </div>
-                        <div class="carousel-item">
-                            <div class="card-item">Conteúdo do Carrossel 2</div>
-                        </div>
-                    </div>
-                    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample" data-bs-slide="prev">
-                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                        <span class="visually-hidden">Anterior</span>
-                    </button>
-                    <button class="carousel-control-next" type="button" data-bs-target="#carouselExample" data-bs-slide="next">
-                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                        <span class="visually-hidden">Próximo</span>
-                    </button>
-                </div>
-            </div>
+        
 
 
 

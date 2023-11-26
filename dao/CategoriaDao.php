@@ -7,7 +7,7 @@
             $conexao = Conexao::conectar();
             $query = "INSERT INTO tbCategoria (nomeCategoria, descCategoria ) VALUES (?,?)";
             $stmt = $conexao->prepare($query);
-            $stmt->bindValue(1, $categoria->getNome());
+            $stmt->bindValue(1, $categoria->getNomeCategoria());
             $stmt->bindValue(2, $categoria->getDescCategoria());
             
             try{
@@ -45,7 +45,7 @@
             descCategoria = ? 
             WHERE idCategoria = ?";
             $stmt = $conexao->prepare($query);
-            $stmt->bindValue(1, $categoria->getNome() ?? '');
+            $stmt->bindValue(1, $categoria->getNomeCategoria() ?? '');
             $stmt->bindValue(2, $categoria->getDescCategoria() ?? '');
             $stmt->bindValue(3, $id); 
             return $stmt->execute();

@@ -30,11 +30,9 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>NerdHeaven - Adm</title>
-  <link rel="short icon" href="./../../img/site/logo.png" />
-  <!-- Bootstrap -->
+  <link rel="short icon" href="./../../img/site/logo.png"/>
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
-  <!-- icon -->
-  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css"> <!-- CSS Projeto -->
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css"> 
   <link rel="stylesheet" href="css/style.css">
 </head>
 

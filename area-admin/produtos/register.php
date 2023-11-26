@@ -89,12 +89,12 @@ if (!empty($_POST)) {
                   <div class="col-md-3 mb-3">
                     <label for="tipoProduto" class="col-form-label">Tipo de produto:</label>
                     <select class="form-control" name="tipoProduto" id="tipoProduto" required>
-                      <option value="" <?php echo ($tipoProduto == '') ? 'selected' : ''; ?>></option>
-                      <option value="camisa" <?php echo ($tipoProduto == 'camisa') ? 'selected' : ''; ?>>Camisa</option>
-                      <option value="funkoPop" <?php echo ($tipoProduto == 'funkoPop') ? 'selected' : ''; ?>>Funko Pop</option>
-                      <option value="colecionaveis" <?php echo ($tipoProduto == 'colecionaveis') ? 'selected' : ''; ?>>Colecionáveis</option>
-                      <option value="luminarias" <?php echo ($tipoProduto == 'luminarias') ? 'selected' : ''; ?>>Luminárias</option>
-                      <option value="quadros" <?php echo ($tipoProduto == 'quadros') ? 'selected' : ''; ?>>Quadros</option>
+                      <option value=""></option>
+                      <option value="camisa" >Camisa</option>
+                      <option value="funkoPop">Funko Pop</option>
+                      <option value="colecionaveis">Colecionáveis</option>
+                      <option value="luminarias">Luminárias</option>
+                      <option value="quadros">Quadros</option>
                     </select>
                     <div class="invalid-feedback">
                       Selecione o tipo de produto

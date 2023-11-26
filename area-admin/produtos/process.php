@@ -26,7 +26,7 @@
       try {
         $produtoDao = ProdutoDao::cadastrarProduto($produto);
         //$msg->setMensagem("Usuário Salvo com sucesso.", "bg-success");
-        //header("Location: index.php");
+        header("Location: index.php");
       } catch (Exception $e) {
         echo 'Exceção capturada: ',  $e->getMessage(), "\n";
         //$msg->setMensagem("Verifique os dados Digitados.", "bg-danger");

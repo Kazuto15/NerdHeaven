@@ -1,7 +1,7 @@
 <?php
 
     class Categoria{
-        public $id, $nome, $descCategoria;
+        public $id, $nomeCategoria, $descCategoria;
         
         public function getId(){
             return $this->id;
@@ -10,11 +10,11 @@
             $this->id = $id; 
         }
                
-        public function getNome(){
-            return $this->nome;
+        public function getNomeCategoria(){
+            return $this->nomeCategoria;
         }
-        public function setNome($nome){
-            $this->nome = $nome;
+        public function setNomeCategoria($nomeCategoria){
+            $this->nomeCategoria = $nomeCategoria;
         }
        
         public function getDescCategoria(){
