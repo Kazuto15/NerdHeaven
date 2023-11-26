@@ -2,7 +2,7 @@
   require_once("../../model/Admin.php");
   require_once '../../dao/AdminDao.php';
   if(!empty($_POST)){
-    $idAdmin = $adminDao['idAdmin'];
+    $id_Admin = $adminDao['idAdmin'];
     $nome_Admin =  $adminDao['nomeAdmin'];
     $sobrenome_Admin = $adminDao['sobrenomeAdmin'];
     $cpf_Admin = $adminDao['cpfAdmin'];
@@ -52,9 +52,9 @@
           <form method="post" action="process.php" enctype="multipart/form-data" class="needs-validation" novalidate>
             <div class="card-header">
               <strong>INFORMAÇÕES DO ADMINISTRADORES</strong>
-              <input type="hidden" name="idAdmin" id="idAdmin" placeholder="id" value="<?=$id_Admin?>">
-              <input type="hidden" name="nomeFoto" id="nomeFoto" placeholder="nome foto" value="<?=$imagem_Admin?>">
-              <input type="hidden" value="<?=$id_Admin?'ATUALIZAR':'SALVAR'?>" name="acao" >
+              <input type="text" name="idAdmin" id="idAdmin" placeholder="id" value="<?=$id_Admin?>">
+              <input type="text" name="nomeFoto" id="nomeFoto" placeholder="nome foto" value="<?=$imagem_Admin?>">
+              <input type="text" value="<?=$id_Admin?'ATUALIZAR':'SALVAR'?>" name="acao" >
 
             </div>
             <div class="card-body row" style="align-items: center; justify-content: center;">

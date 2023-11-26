@@ -16,5 +16,9 @@
       <a class="link-dark" href="../produtos" style="text-decoration: none;"><i class="fas fa-store"></i>
         Produtos</a>
     </li>
+    <li class="fw-medium my-1">
+      <a class="link-dark" href="../categoria" style="text-decoration: none;"><i class="fas fa-tag"></i>
+        Categorias</a>
+    </li>
   </ul>
 </div>

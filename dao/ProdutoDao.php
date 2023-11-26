@@ -1,11 +1,11 @@
 <?php
-require_once('../../model/Conexao.php');
+require_once __DIR__ .('../../model/Conexao.php');
 
 class ProdutoDao
 {
     public static function cadastrarProduto($produto){
         $conexao = Conexao::conectar();
-        $query = "INSERT INTO tbProduto (nomeProduto,descProduto,precoProduto,qntdProduto,imagemProduto,TipoProduto) VALUES (?,?,?,?,?,?)";
+        $query = "INSERT INTO tbProduto (nomeProduto,descProduto,precoProduto,qntdProduto,imagemProduto,tipoProduto) VALUES (?,?,?,?,?,?)";
         $stmt = $conexao->prepare($query);
         $stmt->bindValue(1, $produto->getNome());
         $stmt->bindValue(2, $produto->getDesc());
@@ -50,7 +50,7 @@ class ProdutoDao
         precoProduto= ?,
         qntdProduto= ?, 
         imagemUser = ?, 
-        idTipoProduto= ? 
+        tipoProduto= ? 
         WHERE idProduto = ?";
         $stmt = $conexao->prepare($query);
         $stmt->bindValue(1, $produto->getNome());

@@ -1,6 +1,6 @@
 <?php 
- /*  require_once __DIR__.'/../dao/ProdutoDao.php'; 
-  $produtos = ProdutoDao::selectAll(); */
+  require_once __DIR__.'/../dao/ProdutoDao.php'; 
+  $produtos = ProdutoDao::selectAll();
 ?>
 <!DOCTYPE html>
 <html lang="pt-br">
@@ -17,53 +17,17 @@
         require_once("../componentes/header-user.php")
     ?>
     <div class="container-cards">
-        <div class="product-card">
-            <div class="product-image">
-                <img src="../imgs/fundo_user/produtos.jpg" alt="">
+        <?php foreach($produtos as $produto) { ?>
+            <div class="product-card">
+                <div class="product-image">
+                    <img src="../imgs/produtos/<?$imagem_produto!= "" ? $imagem_produto : 'padrap.png';?>" alt="">
+                </div>
+                <div class="product-info">
+                    <h3><?=$produto[1]?></h3>
+                    <p><?=$produto[2]?></p>
+                </div>
             </div>
-            <div class="product-info">
-                <h3>Produto</h3>
-                <p>Preco: R$19,99</p>
-            </div>
-        </div>
-
-        <div class="product-card">
-            <div class="product-image">
-                <img src="../imgs/fundo_user/fundo.jpeg" alt="">
-            </div>
-            <div class="product-info">
-                <h3>Produto</h3>
-                <p>Preco: R$19,99</p>
-            </div>
-        </div>
-        <div class="product-card">
-            <div class="product-image">
-                <img src="../imgs/fundo_user/produtos (2).jpg" alt="">
-            </div>
-            <div class="product-info">
-                <h3>Produto</h3>
-                <p>Preco: R$19,99</p>
-            </div>
-        </div>
-        <div class="product-card">
-            <div class="product-image">
-                <img src="../imgs/fundo_user/produtos (1).jpg" alt="">
-            </div>
-            <div class="product-info">
-                <h3>Produto</h3>
-                <p>Preco: R$19,99</p>
-            </div>
-        </div>
-        <div class="product-card">
-            <div class="product-image">
-                <img src="../imgs/fundo_user/fundo_produtos.jpeg" alt="">
-            </div>
-            <div class="product-info">
-                <h3>Produto</h3>
-                <p>Preco: R$19,99</p>
-            </div>
-        </div>
-
+        <?php }?>
             <div class="carousel-container" style="display: none;">
                 <div id="carouselExample" class="carousel slide" data-bs-ride="carousel">
                     <div class="carousel-inner">
