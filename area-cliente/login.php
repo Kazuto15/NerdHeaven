@@ -13,6 +13,7 @@
     <div class="row align-items-center g-lg-5 py-4  ">
       <div class="col-md-10 mx-auto">
         <form class="p-4 p-md-5 border rounded-3" method="post" action="home.php">
+          <h3 class="text-center mb-3">Login</h3>
           <div class="form-floating mb-3">
             <input type="text" name="email" class="form-control" id="Input" placeholder="seu_email@gmail.com">
             <label for="Input">Email</label>
@@ -24,6 +25,7 @@
           <button class="w-100 btn btn-lg btn-primary mt-4" type="submit">Entrar</button>
           <hr class="my-4">
           <small class="text-body-secondary">Ao clicar em Entrar, você concorda com os nossos termos de uso.</small>
+          <p>Não tem uma conta?<a href="registro.php"> Cadastre-se</a></p>
         </form>
       </div>
     </div>

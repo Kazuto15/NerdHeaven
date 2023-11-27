@@ -30,8 +30,8 @@
 <body>
     <div class="box">
         <form action="telaCadastro.php" method="POST">
+            <legend><b>Formulario de clientes</b></legend>
             <fieldset>
-                <legend><b>Formulario de clientes</b></legend>
                 <div class="inputBox">
                     <input type="text" name="nome" id="nome" class="inputUser" required>
                     <label for="nome" class="labelInput">Nome</label>
@@ -58,15 +58,17 @@
                 </div>
 
                 <div class="inputBox">
-                    <label for=""><b>Data de nascimento</b></label>
-                    <input type="date" name="nasc" id="nasc"  required>
+                    <input type="date" name="nasc" id="nasc" class="inputUser"required>
+
+                    
                 </div>
 
                 
 
                 
-                <input type="submit" name="submit" value="Enviar" id="submit">
             </fieldset>
+                <input class="col-6" type="submit" name="submit" value="Enviar" id="submit">
+                <button class="col-6" id="submit">Já tem uma conta?<a  id="login" href="login.php">Login</a></button>
         </form>
     </div>
 </body>

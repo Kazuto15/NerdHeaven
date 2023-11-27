@@ -3,9 +3,9 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Tempo de geração: 19/11/2023 às 22:39
+-- Tempo de geração: 27-Nov-2023 às 21:03
 -- Versão do servidor: 10.4.28-MariaDB
--- Versão do PHP: 8.2.4
+-- versão do PHP: 8.2.4
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -24,7 +24,7 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
--- Estrutura para tabela `tbadmin`
+-- Estrutura da tabela `tbadmin`
 --
 
 CREATE TABLE `tbadmin` (
@@ -40,7 +40,7 @@ CREATE TABLE `tbadmin` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
 
 --
--- Despejando dados para a tabela `tbadmin`
+-- Extraindo dados da tabela `tbadmin`
 --
 
 INSERT INTO `tbadmin` (`idAdmin`, `nomeAdmin`, `sobrenomeAdmin`, `cpfAdmin`, `nascAdmin`, `emailAdmin`, `senhaAdmin`, `imagemAdmin`, `tokenAdmin`) VALUES
@@ -51,7 +51,29 @@ INSERT INTO `tbadmin` (`idAdmin`, `nomeAdmin`, `sobrenomeAdmin`, `cpfAdmin`, `na
 -- --------------------------------------------------------
 
 --
--- Estrutura para tabela `tbproduto`
+-- Estrutura da tabela `tbcategoria`
+--
+
+CREATE TABLE `tbcategoria` (
+  `idCategoria` int(11) NOT NULL,
+  `nomeCategoria` varchar(50) NOT NULL,
+  `descCategoria` text DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
+
+--
+-- Extraindo dados da tabela `tbcategoria`
+--
+
+INSERT INTO `tbcategoria` (`idCategoria`, `nomeCategoria`, `descCategoria`) VALUES
+(2, 'Funko Pop', 'Uma série de pequenos bonecos de personagens'),
+(4, 'Camisa', 'Camisas de qualquer tamanho e para qualquer gênero'),
+(5, 'Quadros', 'Quadros decorativos de personagens ou ambientes '),
+(6, 'Colecionáveis', '');
+
+-- --------------------------------------------------------
+
+--
+-- Estrutura da tabela `tbproduto`
 --
 
 CREATE TABLE `tbproduto` (
@@ -61,13 +83,22 @@ CREATE TABLE `tbproduto` (
   `precoProduto` decimal(10,2) DEFAULT NULL,
   `qntdProduto` int(11) NOT NULL,
   `imagemProduto` varchar(70) NOT NULL,
-  `TipoProduto` varchar(50) NOT NULL
+  `idCategoria` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
+
+--
+-- Extraindo dados da tabela `tbproduto`
+--
+
+INSERT INTO `tbproduto` (`idProduto`, `nomeProduto`, `descProduto`, `precoProduto`, `qntdProduto`, `imagemProduto`, `idCategoria`) VALUES
+(8, 'Pelúcia do cavaleiro vazio', 'hollow Knight', 150.00, 2, '59c3596a811007223229a6824e1389c6.jpg', 6),
+(9, 'Caneca da pon Genshin', 'Genshin Impact', 150.00, 20, '4eed049003d46a5f9446cc800d844130.jpg', 2),
+(10, 'Funko Pop Charmander', 'Funko pop do pokémon charmander do anime pokémon. Um dos iniciais de Kanto', 90.00, 100, '2d560ed0750a4ad38d0d474717444e16.jpg', 2);
 
 -- --------------------------------------------------------
 
 --
--- Estrutura para tabela `tbuser`
+-- Estrutura da tabela `tbuser`
 --
 
 CREATE TABLE `tbuser` (
@@ -83,7 +114,7 @@ CREATE TABLE `tbuser` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
 
 --
--- Despejando dados para a tabela `tbuser`
+-- Extraindo dados da tabela `tbuser`
 --
 
 INSERT INTO `tbuser` (`idUser`, `nomeUser`, `sobrenomeUser`, `cpfUser`, `nascUser`, `emailUser`, `senhaUser`, `imagemUser`, `tokenUser`) VALUES
@@ -99,25 +130,32 @@ INSERT INTO `tbuser` (`idUser`, `nomeUser`, `sobrenomeUser`, `cpfUser`, `nascUse
 --
 
 --
--- Índices de tabela `tbadmin`
+-- Índices para tabela `tbadmin`
 --
 ALTER TABLE `tbadmin`
   ADD PRIMARY KEY (`idAdmin`);
 
 --
--- Índices de tabela `tbproduto`
+-- Índices para tabela `tbcategoria`
 --
-ALTER TABLE `tbproduto`
-  ADD PRIMARY KEY (`idProduto`);
+ALTER TABLE `tbcategoria`
+  ADD PRIMARY KEY (`idCategoria`);
 
 --
--- Índices de tabela `tbuser`
+-- Índices para tabela `tbproduto`
+--
+ALTER TABLE `tbproduto`
+  ADD PRIMARY KEY (`idProduto`),
+  ADD KEY `categoriaProduto` (`idCategoria`);
+
+--
+-- Índices para tabela `tbuser`
 --
 ALTER TABLE `tbuser`
   ADD PRIMARY KEY (`idUser`);
 
 --
--- AUTO_INCREMENT para tabelas despejadas
+-- AUTO_INCREMENT de tabelas despejadas
 --
 
 --
@@ -127,16 +165,32 @@ ALTER TABLE `tbadmin`
   MODIFY `idAdmin` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
+-- AUTO_INCREMENT de tabela `tbcategoria`
+--
+ALTER TABLE `tbcategoria`
+  MODIFY `idCategoria` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+
+--
 -- AUTO_INCREMENT de tabela `tbproduto`
 --
 ALTER TABLE `tbproduto`
-  MODIFY `idProduto` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `idProduto` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 
 --
 -- AUTO_INCREMENT de tabela `tbuser`
 --
 ALTER TABLE `tbuser`
   MODIFY `idUser` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
+
+--
+-- Restrições para despejos de tabelas
+--
+
+--
+-- Limitadores para a tabela `tbproduto`
+--
+ALTER TABLE `tbproduto`
+  ADD CONSTRAINT `categoriaProduto` FOREIGN KEY (`idCategoria`) REFERENCES `tbcategoria` (`idCategoria`);
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

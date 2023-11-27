@@ -20,11 +20,11 @@
         <div class="product-card">
         <?php foreach($produtos as $produto) {?>
                         <div class="product-image">
-            <img id="preview" src="../../imgs/product/<?=$imagem_Produto!="" ? $imagem_Produto : 'padrao.jpg';?>" alt="..."
+            <img id="preview" src="../imgs/product/<?php echo $produto['imagemProduto']?>" alt="..."
                   class="rounded  w-100  "  style="height:200px; object-fit: cover; border:4px solid #ccc" >            </div>
             <div class="product-info">
                 <h6><?=$produto[1]?></h6>
-                <p><?=$produto[4]?></p>
+                <p style="color:">R$ <?=$produto[3 ]?></p>
             </div>
             <?php } ?>
         </div>

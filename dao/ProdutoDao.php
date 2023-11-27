@@ -21,7 +21,8 @@ class ProdutoDao{
 
     public static function selectAll(){
         $conexao = Conexao::conectar();
-        $query = "SELECT * FROM tbProduto INNER JOIN tbCategoria on tbProduto.idCategoria = tbCategoria.idCategoria";
+        $query = "SELECT * FROM tbProduto INNER JOIN tbCategoria on tbProduto.idCategoria = tbCategoria.idCategoria
+        ORDER BY idProduto ASC";
         $stmt = $conexao->prepare($query);
         $stmt->execute();
         return $stmt->fetchAll();

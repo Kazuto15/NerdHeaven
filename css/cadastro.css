@@ -17,12 +17,12 @@ html{
 fieldset{
     border: 2px solid rgb(240, 236, 20);
     border-radius: 10px;
+    padding-inline: 10px;
 }
 legend{
-    border: 1px solid rgb(233, 214, 40);
     text-align: center;
     padding: 10px;
-    background-color: dodgerblue;
+    margin-top: 10px;
     border-radius: 6px;
     color: whitesmoke;
     margin-bottom: 10%;
@@ -62,14 +62,11 @@ legend{
     outline: none;
 }
 #submit{
-    background-image: linear-gradient(to right, rgb(0, 92, 197), rgba(90, 20, 220));
     width: 100%;
     border: none;
     padding: 15px;
+    margin-bottom: 2%;
     border-radius: 10px;
     color: ghostwhite;
     cursor: pointer;
 }   
-#submit:hover{
-    background-image: linear-gradient(to right,rgb(0, 80, 172), rgb(80, 19, 195));
-}
