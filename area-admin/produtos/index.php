@@ -54,7 +54,7 @@
                 <td><?=$produto[0]?></td>
                 <td><?=$produto[1]?></td>
                 <td><?=$produto[4]?> Unidades</td>
-                <td><?=$produto[6]?></td>
+                <td><?=$produto[8]?></td>
                 <td>R$ <?=$produto[3]?></td>
                 <td class="text-center">
                   <form action="process.php" method="POST">
@@ -108,7 +108,7 @@
     </div>
   </div>
   <?php
-    require_once("../../componentes/modal.php");
+    //require_once("../../componentes/modal.php");
   ?>
   <script type="text/javascript" src="http://code.jquery.com/jquery-3.0.0.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"

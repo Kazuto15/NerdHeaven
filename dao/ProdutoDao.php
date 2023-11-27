@@ -4,7 +4,7 @@ require_once(__DIR__ . '../../model/Conexao.php');
 class ProdutoDao{
     public static function cadastrarProduto($produto){
         $conexao = Conexao::conectar();
-        $query = "INSERT INTO tbProduto (nomeProduto,descProduto,precoProduto,qntdProduto,imagemProduto,TipoProduto) VALUES (?,?,?,?,?,?)";
+        $query = "INSERT INTO tbProduto (nomeProduto,descProduto,precoProduto,qntdProduto,imagemProduto,idCategoria) VALUES (?,?,?,?,?,?)";
         $stmt = $conexao->prepare($query);
         $stmt->bindValue(1, $produto->getNome());
         $stmt->bindValue(2, $produto->getDesc());
@@ -21,7 +21,7 @@ class ProdutoDao{
 
     public static function selectAll(){
         $conexao = Conexao::conectar();
-        $query = "SELECT * FROM tbProduto";
+        $query = "SELECT * FROM tbProduto INNER JOIN tbCategoria on tbProduto.idCategoria = tbCategoria.idCategoria";
         $stmt = $conexao->prepare($query);
         $stmt->execute();
         return $stmt->fetchAll();
@@ -49,7 +49,7 @@ class ProdutoDao{
         precoProduto= ?,
         qntdProduto= ?, 
         imagemProduto = ?, 
-        TipoProduto= ? 
+        idCategoria= ? 
         WHERE idProduto = ?";
         $stmt = $conexao->prepare($query);
         $stmt->bindValue(1, $produto->getNome());

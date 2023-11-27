@@ -22,7 +22,7 @@
       $produto->setPreco($_POST['preco']);
       $produto->setQntd($_POST['qntd']);
       $produto->setImagem($produto->salvarImagem($_POST['nomeFoto'])); 
-      $produto->setTipoProduto($_POST['tipoProduto']);
+      $produto->setTipoProduto($_POST['idCategoria']);
       try {
         $produtoDao = ProdutoDao::cadastrarProduto($produto);
         //$msg->setMensagem("Usuário Salvo com sucesso.", "bg-success");
@@ -40,7 +40,7 @@
           $produto->setPreco($_POST['preco']);
           $produto->setQntd($_POST['qntd']);
           $produto->setImagem($produto->salvarImagem($_POST['nomeFoto'])); 
-          $produto->setTipoProduto($_POST['tipoProduto']);
+          $produto->setTipoProduto($_POST['idCategoria']);
           try {
             $produtoDao = ProdutoDao::update($_POST["idProduto"], $produto);
             //$msg->setMensagem("Usuário Atualizado com sucesso.", "bg-success");

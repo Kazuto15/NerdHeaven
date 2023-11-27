@@ -48,7 +48,7 @@ body {
     padding: 100px 150px; /* Espaçamento de 100px nas bordas superior e inferior, e 150px nas laterais */
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-between;
+    justify-content: space-around;
 }
 
 .product-card {

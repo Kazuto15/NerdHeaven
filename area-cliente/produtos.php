@@ -26,10 +26,8 @@
                 <h6><?=$produto[1]?></h6>
                 <p><?=$produto[4]?></p>
             </div>
+            <?php } ?>
         </div>
-
-
-        
-        <?php } ?>
+    </div>
 </body>
 </html>

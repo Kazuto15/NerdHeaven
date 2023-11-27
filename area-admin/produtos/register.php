@@ -1,7 +1,9 @@
 <?php 
   require_once("../../model/Produtos.php");
   require_once ('../../dao/ProdutoDao.php');
+  require_once ('../../dao/CategoriaDao.php');
 
+  $categorias = CategoriaDao::selectAll();
 
 
   if(!empty($_POST)){
@@ -9,19 +11,18 @@
     $nome =  $ProdutoDao['nomeProduto'];
     $qntd = $ProdutoDao['qntdProduto'];
     $preco = $ProdutoDao['precoProduto'];
-    $tipoProduto= $ProdutoDao['TipoProduto'];
+    $idCategoria= $ProdutoDao['idCategoria'];
     $descricao = $ProdutoDao['descProduto'];
     $imagem_Produto = $ProdutoDao['imagemProduto'];
     }else{
       $nome = '';
       $qntd = '';
       $preco= '';
-      $tipoProduto = '';
+      $idCategoria = '';
       $descricao= '';
       $imagem_Produto = '';
       $idProduto = '';
     }
-
 
 ?>
 <!DOCTYPE html>
@@ -93,14 +94,13 @@
                 </div>
                 <div class="col-md-3 mb-3">
                   <label for="tipoProduto" class="col-form-label">Tipo de produto:</label>
-                  <select class="form-control" name="tipoProduto" id="tipoCategoria" value="<?$tipoProduto?>" required>
-                    <option value=""></option>
-                    <option value="camisa">Camisa</option>
-                    <option value="funkoPop">Funko Pop</option>
-                    <option value="colecionaveis">Colecionáveis</option>
-                    <option value="luminarias">Luminárias</option>
-                    <option value="quadros">Quadros</option>
-                    <option value="quadros">Almofada</option>
+                  <select class="form-control" name="idCategoria" id="idCategoria" value="<?$tipoProduto?>" required>
+                    <option value="--">--</option>
+                    <?php foreach($categorias as $categoria) { ?>
+                      <option value="<?=$categoria[0]?>"><?=$categoria[1]?></option>
+
+
+                      <?php }?>
                   </select>
                   <div class="invalid-feedback">
                     Selecione o tipo de produto
