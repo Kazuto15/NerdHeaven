@@ -1,7 +1,7 @@
 <?php
 
     class Produto{
-        public $id, $nome, $desc, $preco, $qntd, $imagem, $TipoProduto;
+        public $id, $nome, $desc, $preco, $qntd, $imagem, $idCategoria;
         
         public function getId(){
             return $this->id;
@@ -43,11 +43,11 @@
         public function setImagem($imagem){
             $this->imagem = $imagem; 
         }
-        public function getTipoProduto(){
-            return $this->TipoProduto;
+        public function getIdCategoria(){
+            return $this->idCategoria;
         }
-        public function setTipoProduto($TipoProduto){
-            $this->TipoProduto = $TipoProduto; 
+        public function setIdCategoria($idCategoria){
+            $this->idCategoria = $idCategoria; 
         }
     
 

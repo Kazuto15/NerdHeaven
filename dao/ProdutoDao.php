@@ -1,11 +1,10 @@
 <?php
-require_once __DIR__ .('../../model/Conexao.php');
+require_once(__DIR__ . '../../model/Conexao.php');
 
-class ProdutoDao
-{
+class ProdutoDao{
     public static function cadastrarProduto($produto){
         $conexao = Conexao::conectar();
-        $query = "INSERT INTO tbProduto (nomeProduto,descProduto,precoProduto,qntdProduto,imagemProduto,tipoProduto) VALUES (?,?,?,?,?,?)";
+        $query = "INSERT INTO tbProduto (nomeProduto,descProduto,precoProduto,qntdProduto,imagemProduto,idCategoria) VALUES (?,?,?,?,?,?)";
         $stmt = $conexao->prepare($query);
         $stmt->bindValue(1, $produto->getNome());
         $stmt->bindValue(2, $produto->getDesc());
@@ -22,7 +21,8 @@ class ProdutoDao
 
     public static function selectAll(){
         $conexao = Conexao::conectar();
-        $query = "SELECT * FROM tbProduto";
+        $query = "SELECT * FROM tbProduto INNER JOIN tbCategoria on tbProduto.idCategoria = tbCategoria.idCategoria
+        ORDER BY idProduto ASC";
         $stmt = $conexao->prepare($query);
         $stmt->execute();
         return $stmt->fetchAll();
@@ -49,8 +49,8 @@ class ProdutoDao
         descProduto= ?, 
         precoProduto= ?,
         qntdProduto= ?, 
-        imagemUser = ?, 
-        tipoProduto= ? 
+        imagemProduto = ?, 
+        idCategoria= ? 
         WHERE idProduto = ?";
         $stmt = $conexao->prepare($query);
         $stmt->bindValue(1, $produto->getNome());
@@ -62,8 +62,6 @@ class ProdutoDao
         $stmt->bindValue(7, $id); // Certifique-se de que o ID seja o terceiro valor
         return $stmt->execute();
     }
-
 }
     // Adicione métodos para atualizar, excluir, obter por ID, etc.
 ?>
-

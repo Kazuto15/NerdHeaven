@@ -1,4 +1,4 @@
-  <?php
+<?php
   require_once ('../../dao/ProdutoDao.php');
   require_once ('../../model/Produtos.php');
 
@@ -22,7 +22,7 @@
       $produto->setPreco($_POST['preco']);
       $produto->setQntd($_POST['qntd']);
       $produto->setImagem($produto->salvarImagem($_POST['nomeFoto'])); 
-      $produto->setTipoProduto($_POST['tipoProduto']);
+      $produto->setIdCategoria($_POST['idCategoria']);
       try {
         $produtoDao = ProdutoDao::cadastrarProduto($produto);
         //$msg->setMensagem("Usuário Salvo com sucesso.", "bg-success");
@@ -30,7 +30,7 @@
       } catch (Exception $e) {
         echo 'Exceção capturada: ',  $e->getMessage(), "\n";
         //$msg->setMensagem("Verifique os dados Digitados.", "bg-danger");
-        //header("Location: register.php");
+        header("Location: register.php");
       } 
       break;
     case 'ATUALIZAR':
@@ -40,7 +40,7 @@
           $produto->setPreco($_POST['preco']);
           $produto->setQntd($_POST['qntd']);
           $produto->setImagem($produto->salvarImagem($_POST['nomeFoto'])); 
-          $produto->setTipoProduto($_POST['tipoProduto']);
+          $produto->setIdCategoria($_POST['idCategoria']);
           try {
             $produtoDao = ProdutoDao::update($_POST["idProduto"], $produto);
             //$msg->setMensagem("Usuário Atualizado com sucesso.", "bg-success");
@@ -52,14 +52,13 @@
       break;
 
     case 'SELECTID':
-
       try {
-          $produtoDao = ProdutoDao::selectById($_POST['id']);
+          $ProdutoDao = ProdutoDao::selectById($_POST['id']);
           // Configura as opções do contexto da solicitação
           include('register.php');
-      } catch (Exception $e) {
-          //echo 'Exceção capturada: ',  $e->getMessage(), "\n";
-      } 
+          } catch (Exception $e) {
+              //echo 'Exceção capturada: ',  $e->getMessage(), "\n";
+          } 
 
     
       break;
