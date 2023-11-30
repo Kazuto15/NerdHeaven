@@ -58,7 +58,7 @@ class ProdutoDao{
         $stmt->bindValue(3, $produto->getPreco());
         $stmt->bindValue(4, $produto->getQntd());
         $stmt->bindValue(5, $produto->getImagem());
-        $stmt->bindValue(6, $produto->getTipoProduto());
+        $stmt->bindValue(6, $produto->getIdCategoria());
         $stmt->bindValue(7, $id); // Certifique-se de que o ID seja o terceiro valor
         return $stmt->execute();
     }
