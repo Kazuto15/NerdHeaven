@@ -16,6 +16,7 @@ html{
 }
 fieldset{
     border: 2px solid rgb(240, 236, 20);
+    padding-top: 5%;
     border-radius: 10px;
     padding-inline: 10px;
 }
@@ -68,5 +69,6 @@ legend{
     margin-bottom: 2%;
     border-radius: 10px;
     color: ghostwhite;
+    background-color: royalblue;
     cursor: pointer;
 }   

@@ -1,24 +1,16 @@
 <?php 
-  require_once("../../model/Admin.php");
-  require_once '../../dao/AdminDao.php';
+  require_once("../../model/Categoria.php");
+  require_once '../../dao/CategoriaDao.php';
+  
   if(!empty($_POST)){
-    $idAdmin = $adminDao['idAdmin'];
-    $nome_Admin =  $adminDao['nomeAdmin'];
-    $sobrenome_Admin = $adminDao['sobrenomeAdmin'];
-    $cpf_Admin = $adminDao['cpfAdmin'];
-    $nasc_Admin= $adminDao['nascAdmin'];
-    $email_Admin = $adminDao['emailAdmin'];
-    $password_Admin = $adminDao['senhaAdmin'];
-    $imagem_Admin = $adminDao['imagemAdmin'];
+    $id_Categoria = $categoriaDao['idCategoria'];
+    $nome_Categoria =  $categoriaDao['nomeCategoria'];
+    $desc_Categoria = $categoriaDao['descCategoria'];
+
     }else{
-      $nome_Admin = '';
-      $sobrenome_Admin = '';
-      $cpf_Admin = '';
-      $nasc_Admin= '';
-      $email_Admin = '';
-      $password_Admin = '';
-      $imagem_Admin = '';
-      $id_Admin = '';
+      $nome_Categoria = '';
+      $desc_Categoria = '';
+      $id_Categoria = '';
     }
 
 
@@ -51,76 +43,35 @@
         <div class="card">
           <form method="post" action="process.php" enctype="multipart/form-data" class="needs-validation" novalidate>
             <div class="card-header">
-              <strong>INFORMAÇÕES DO ADMINISTRADORES</strong>
-              <input type="hidden" name="idAdmin" id="idAdmin" placeholder="id" value="<?=$id_Admin?>">
-              <input type="text" name="nomeFoto" id="nomeFoto" placeholder="nome foto" value="<?=$imagem_Admin?>">
-              <input type="hidden" value="<?=$id_Admin?'ATUALIZAR':'SALVAR'?>" name="acao" >
-
+              <strong>INFORMAÇÕES DO USUÁRIO</strong>
+              <input type="hidden" name="idCategoria" id="idCategoria" placeholder="id" value="<?=$id_Categoria?>">
+              <input type="hidden" value="<?=$id_Categoria?'ATUALIZAR':'SALVAR'?>" name="acao" >
             </div>
             <div class="card-body row" style="align-items: center; justify-content: center;">
               <div class="col-md-2   text-center" >
-                <div class="bg-white rounded border" >
-                  <img id="preview" src="../../imgs/admin/<?=$imagem_Admin!="" ? $imagem_Admin : 'padrao.png';?>" alt="..."
-                    class="rounded  w-100  "  style="height:200px; object-fit: cover; border:4px solid #ccc" >
-                </div>
               </div>
               <div class=" col-md-10">
                 <div class="row">
                   <div class="col-md-3 mb-3">
-                    <label for="nome" class="col-form-label">Nome:</label>
-                    <input type="text" class="form-control" name="nome" maxlength="50" id="nome" value="<?=$nome_Admin?>"
-                      required>
+                    <label for="nomeCategoria" class="col-form-label">Nome da categoria:</label>
+                    <input type="text" class="form-control" name="nomeCategoria" maxlength="50" id="nomeCategoria" 
+                    value="<?=$nome_Categoria?>" required>
                     <div class="invalid-feedback">
-                      Nome Inválido
+                      Nome da categoria Inválido
                     </div>
                   </div>
                   <div class="col-md-6 mb-3">
-                    <label for="sobrenome" class="col-form-label">Sobrenome:</label>
-                    <input type="text" class="form-control" name="sobrenome" maxlength="50" id="sobrenome"
-                      value="<?=$sobrenome_Admin?>" required>
+                    <label for="descCategoria" class="col-form-label">Descrição:</label>
+                    <input type="text" class="form-control" name="descCategoria" maxlength="50" id="descCategoria"
+                      value="<?=$desc_Categoria?>" required>
                     <div class="invalid-feedback">
-                      Sobrenome Inválido
+                      Descrição Inválido
                     </div>
                   </div>
-                  <div class="col-md-3 mb-3">
-                    <label for="cpf" class="col-form-label">CPF:</label>
-                    <input type="text" class="form-control" name="cpf" maxlength="14" id="cpf"
-                      data-mask="000.000.000-00" data-mask-selectonfocus="true" value="<?=$cpf_Admin?>" required>
-                    <div class="invalid-feedback">
-                      CPF Inválido
-                    </div>
-                  </div>
-                </div>
-                <div class="row">
-                  <div class="col-md-3">
-                    <label for="nasc" class="col-form-label">Data de Nascimento:</label>
-                    <input type="date" class="form-control" name="nasc" id="nasc" value="<?=$nasc_Admin?>" required>
-                    <div class="invalid-feedback">
-                      Data Inválido
-                    </div>
-                  </div>
-                  <div class="col-md-6">
-                    <label for="email" class="col-form-label">Email:</label>
-                    <input type="email" class="form-control" name="email" maxlength="100" value="<?=$email_Admin?>"
-                      id="email" required>
-                    <div class="invalid-feedback">
-                      E-mail Inválido
-                    </div>
-                  </div>
-                  <div class="col-md-3">
-                    <label for="senha" class="col-form-label">Senha:</label>
-                    <input type="password" class="form-control" name="senha" value="<?=$password_Admin?>" maxlength="20"
-                      id="senha" required>
-                    <div class="invalid-feedback">
-                      Senha Inválido
-                    </div>
-                  </div>
+          
                 </div>
                 <div class="row mt-5 ">
-                  <div class="col-md-2">
-                    <input type="file" id="foto" name="foto" accept="image/*" class="custom-file-input">
-                  </div>
-                  <div class=" text-end  col-md-10">
+                  <div class=" text-end  col-md-12">
                   <a class=" btn btn-primary px-3" role="button" aria-disabled="true" href="index.php">Voltar</i></a>
                   <input type="submit" class=" btn btn-success" value="Salvar">
                 </div>

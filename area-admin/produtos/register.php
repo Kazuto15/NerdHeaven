@@ -62,7 +62,7 @@
           <div class="card-body row" style="align-items: center; justify-content: center;">
             <div class="col-md-2   text-center">
               <div class="bg-white rounded border" >
-                <img id="preview" src="../../imgs/product/<?=$imagem_Produto!="" ? $imagem_Produto : 'padrao.jpg';?>" alt="..."
+                <img id="preview" src="../../imgs/product/<?=$imagem_Produto!="" ? $imagem_Produto : 'padrao.png';?>" alt="..."
                   class="rounded  w-100  "  style="height:200px; object-fit: cover; border:4px solid #ccc" >
               </div>
             </div>

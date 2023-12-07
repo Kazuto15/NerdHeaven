@@ -1,7 +1,7 @@
 <?php 
 
-  require_once '../../dao/AdminDao.php'; 
-  $admins = AdminDao::selectAll();
+  require_once '../../dao/CategoriaDao.php'; 
+  $categorias = CategoriaDao::selectAll();
 ?>
 
 <!DOCTYPE html>
@@ -31,7 +31,7 @@
       <div class="col-md-10  p-4 borber">
         <div class="row align-items-center mb-4">
           <div class="col fs-3 fw-semibold">
-            Lista de Admins
+            Lista de Usuário
           </div>
           <div class="col text-end ">
             <a class="btn btn-success px-3" role="button" aria-disabled="true" href="register.php"><i
@@ -43,24 +43,20 @@
             <thead>
               <tr>
                 <th class="col-md-1">ID</th>
-                <th class="col-md-1">Nascimento</th>
-                <th class="col-md-3">Nome </th>
-                <th class="col-md-3">E-mail</th>
-                <th class="col-md-2">CPF</th>
+                <th class="col-md-3">Categoria</th>
+                <th class="col-md-3">Descrição</th>
                 <th class="text-center col-md-1">Alterar</th>
                 <th class="text-center col-md-1">Excluir</th>
               </tr>
-              <?php foreach($admins as $admin) { ?>
+              <?php foreach($categorias as $categoria) { ?>
               <tr>
-                <td><?=$admin[0]?></td>
-                <td><?= date('d/m/Y', strtotime($admin[4]));  ?></td>
-                <td><?=$admin[1]?> <?=$admin[2]?></td>
-                <td><?=$admin[5]?></td>
-                <td><?=$admin[3]?></td>
+                <td><?=$categoria[0]?></td>
+                <td><?=$categoria[1]?></td>
+                <td><?=$categoria[2]?></td>
                 <td class="text-center">
                   <form action="process.php" method="POST">
                     <input type="hidden" class="form-control" id="acao" name="acao" value="SELECTID">
-                    <input type="hidden" class="form-control" id="id" name="id" value="<?=$admin[0]?>">
+                    <input type="hidden" class="form-control" id="id" name="id" value="<?=$categoria[0]?>">
                     <button type="submit" class="dropdown-item" ><i
                         class="fas fa-edit fa-lg text-secondary"></i>
                     </button>
@@ -69,14 +65,14 @@
                 <td class="text-center ">
                 <form action="process.php" method="POST">
                     <input type="hidden" class="form-control" id="acao" name="acao" value="DELETE">
-                    <input type="hidden" class="form-control" id="idDeletar" name="idDeletar" value="<?=$admin[0]?>">
+                    <input type="hidden" class="form-control" id="idDeletar" name="idDeletar" value="<?=$categoria[0]?>">
                     <button type="submit" class="dropdown-item" ><i
                         class="fas fa-trash fa-lg text-danger"></i>
                     </button>
                   </form>
                 </td>
-              <tr>
                 <?php } ?>
+                <tr>
             </thead>
             <tbody>
             </tbody>

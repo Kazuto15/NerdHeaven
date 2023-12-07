@@ -35,6 +35,14 @@ class ProdutoDao{
         $stmt->execute();
         return $stmt->fetch(PDO::FETCH_ASSOC);
     }
+    public static function selectAllById($id){
+        $conexao = Conexao::conectar();
+        $query = "SELECT * FROM tbProduto INNER JOIN tbCategoria on tbProduto.idCategoria = tbCategoria.idCategoria WHERE idProduto = ? ";
+        $stmt = $conexao->prepare($query);
+        $stmt->bindValue(1, $id);
+        $stmt->execute();
+        return $stmt->fetch(PDO::FETCH_ASSOC);
+    }
     public static function delete($id){
         $conexao = Conexao::conectar();
         $query = "DELETE FROM tbProduto WHERE idProduto = ?";

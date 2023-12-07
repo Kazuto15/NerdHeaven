@@ -15,7 +15,7 @@
 
 <body style="justify-content: center; align-items: center; height: 100vh;  ">
   <div class="container col-xl-10 col-xxl-8 " style="height: 95vh; padding:8% 30px; background-color:'#ccc'">
-    <div class="row align-items-center g-lg-5 py-4  ">
+    <div class="row align-items-center g-lg-5 py-4 pt-5 ">
       <div class="col-lg-7 text-center text-lg-start">
         <img src="./../imgs/Logo_f.png" class="rounded-circle mx-auto d-block" alt="..." style="width:20%">
         <h1 class="display-4 fw-bold lh-1 text-body-emphasis mb-3 text-center">Nerd Heaven</h1>
@@ -38,7 +38,7 @@
           </div>
           <button class="w-100 btn btn-lg btn-primary" type="submit">Logar</button>
           <hr class="my-4">
-          <small class="text-body-secondary">Ao clicar em Cadastre-se, você concorda com os termos de uso.</small>
+          <small class="text-body-secondary">Ao clicar em Logar, você concorda com os termos de uso.</small>
         </form>
       </div>
     </div>

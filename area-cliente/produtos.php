@@ -16,18 +16,27 @@
     <?php
         require_once("../componentes/header-user.php")
     ?>
-    <div class="container-cards">
-        <div class="product-card">
-        <?php foreach($produtos as $produto) {?>
-                        <div class="product-image">
-            <img id="preview" src="../imgs/product/<?php echo $produto['imagemProduto']?>" alt="..."
-                  class="rounded  w-100  "  style="height:200px; object-fit: cover; border:4px solid #ccc" >            </div>
-            <div class="product-info">
-                <h6><?=$produto[1]?></h6>
-                <p style="color:">R$ <?=$produto[3 ]?></p>
+    <div class="container" >
+      <div class="px-lg-5">
+        <div class="row py-5 justify-content-evenly ">
+          <!-- Gallery item -->
+          <?php foreach($produtos as $produto) { ?>
+            <div class="col-xxl-3 col-lg-3 col-md-6 mb-4 mt-3" style="width: 300px">
+            <div class="bg-white rounded shadow card " style="height: 100% ">
+              <img src="../imgs/product/<?=$produto[5]!="" ? $produto[5] : 'padrao.png';?>" alt="" class="img-fluid card-img-top" style="width: 100%; height: 350px;  object-fit: cover;">
+              <div class=" text-center justify-content-center d-flex align-items-center h-75 p-1 row" >
+                <h5 class="card-title col-12"><?=$produto[1]?></h5>
+                <h6 class="card-title col-12">R$ <?=$produto[3]?></h6>
+              </div>
+              <div class="  text-center  justify-content-center d-flex align-items-center pb-3" >
+              <a class="btn btn-outline-secondary" href="vizualizar_produto.php?idProduto=<?=$produto[0]?>" role="button">Saiba Mais</a>
+              </div>
             </div>
-            <?php } ?>
+          </div>
+          <?php } ?>
         </div>
+      </div>
     </div>
+  </div>
 </body>
 </html>
