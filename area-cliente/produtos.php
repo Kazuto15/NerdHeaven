@@ -12,7 +12,7 @@
     <link rel="stylesheet" href="../css/geral.css">
     <title>Produtos</title>
 </head>
-<body id="background2">
+<body id="">
     <?php
         require_once("../componentes/header-user.php")
     ?>

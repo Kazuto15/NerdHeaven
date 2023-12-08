@@ -20,8 +20,6 @@
       $imagem_User = '';
       $id_User = '';
     }
-
-
 ?>
 <!DOCTYPE html>
 <html lang="pt-br">

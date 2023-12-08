@@ -37,7 +37,7 @@ class ProdutoDao{
     }
     public static function selectAllById($id){
         $conexao = Conexao::conectar();
-        $query = "SELECT * FROM tbProduto INNER JOIN tbCategoria on tbProduto.idCategoria = tbCategoria.idCategoria WHERE idProduto = ? ";
+        $query = "SELECT tbProduto.*, tbCategoria.nomeCategoria FROM tbProduto  INNER JOIN tbCategoria on tbProduto.idCategoria = tbCategoria.idCategoria WHERE tbProduto.idProduto = ? ";
         $stmt = $conexao->prepare($query);
         $stmt->bindValue(1, $id);
         $stmt->execute();
@@ -67,10 +67,9 @@ class ProdutoDao{
         $stmt->bindValue(4, $produto->getQntd());
         $stmt->bindValue(5, $produto->getImagem());
         $stmt->bindValue(6, $produto->getTipoProduto());
-        $stmt->bindValue(7, $id); // Certifique-se de que o ID seja o terceiro valor
+        $stmt->bindValue(7, $id);
         return $stmt->execute();
     }
 }
-    // Adicione métodos para atualizar, excluir, obter por ID, etc.
 ?>
 

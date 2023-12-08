@@ -68,12 +68,17 @@
         }
         public static function checkCredentials($email, $senha){
             $conexao = Conexao::conectar();
-            $query = "SELECT * FROM tbUser WHERE emailUser = ? and passwordUser = ?";
+            $query = "SELECT * FROM tbUser WHERE emailUser = ?";
             $stmt = $conexao->prepare($query);
             $stmt->bindValue(1, $email);
-            $stmt->bindValue(2, $senha);
             $stmt->execute();
-            return $stmt->fetch(PDO::FETCH_ASSOC);
+            $usuario = $stmt->fetch(PDO::FETCH_ASSOC);
+        
+            if ($usuario && password_verify($senha, $usuario['senhaUser'])) {
+                return $usuario;
+            } else {
+                return false;
+            }
         }
 
     }

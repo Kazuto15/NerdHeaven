@@ -96,14 +96,18 @@ body {
     align-items: center;
 }
 .image-pag{
-    position: absolute;
-    left: 25%;
-    top: 25%;
+    margin-top: 15%;
+    padding: 5%;
+    max-width: 50%;
+    box-shadow: 0px 0px 10px 1px;
 }
 .content-pag{
     position: absolute;
     right:  -10%;
     top: 30%;
+}
+.content-pag hr{
+    max-width: 50%;
 }
 .descText{
     

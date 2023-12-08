@@ -1,75 +1,106 @@
-<?php
-    if(isset($_POST['submit']))
-    {
-        // print_r($_POST);
-    
-        include_once('config.php');
-
-        $nome = $_POST['nome'];
-        $sobrenome = $_POST['sobrenome'];
-        $email = $_POST['email'];
-        $senha = $_POST['senha'];
-        $cpf = $_POST['cpf'];
-        $nasc = $_POST['nasc'];
-
-        $result = mysqli_query($conexao, "INSERT INTO cadastro(nome,sobrenome,cpf,Nasc,email,senha) 
-        VALUES ('$nome','$sobrenome','$cpf','$nasc','$email','$senha')");
+<?php 
+  require_once("../model/User.php");
+  require_once ("../dao/UserDao.php");
+  if(!empty($_POST)){
+    $id_User = $userDao['idUser'];
+    $nome_User =  $userDao['nomeUser'];
+    $sobrenome_User = $userDao['sobrenomeUser'];
+    $cpf_User = $userDao['cpfUser'];
+    $nasc_User= $userDao['nascUser'];
+    $email_User = $userDao['emailUser'];
+    $password_User = $userDao['senhaUser'];
+    $imagem_User = $userDao['imagemUser'];
+    }else{
+      $nome_User = '';
+      $sobrenome_User = '';
+      $cpf_User = '';
+      $nasc_User= '';
+      $email_User = '';
+      $password_User = '';
+      $imagem_User = '';
+      $id_User = '';
     }
 ?>
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
-    <link rel="stylesheet" href="../css/geral.css">
-    <link rel="stylesheet" href="../css/cadastro.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
     <title>Cadastro</title>
+    <style>
+        #backgroundCadastro {
+            background: url('../imgs/fundo_user/fundoProdutos.jpg');
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-attachment: fixed;
+            font-family: Helvetica, Arial, sans-serif;
+            overflow-x: hidden;
+
+        }
+    </style>
 </head>
-<body>
-    <div class="box">
-        <form action="telaCadastro.php" method="POST">
-            <legend><b>Formulario de clientes</b></legend>
-            <fieldset>
-                <div class="inputBox">
-                    <input type="text" name="nome" id="nome" class="inputUser" required>
-                    <label for="nome" class="labelInput">Nome</label>
+
+<body id="backgroundCadastro">
+    <!-- Navbar -->
+    <?php 
+        require_once ('../componentes/header-user.php')
+    ?>
+    <div class="container mt-5">
+        <div class="row justify-content-center align-items-center">
+            <div class="col-md-5 pb-5" >
+                <div class="pt-4">
+                    <h4 class="text-dark"><strong>Conheça ja a nossa loja</strong></h4>
+                    <img src="../imgs/Logo.png" class="d-block img-fluid w-100" style="border-radius: 10px;" alt="...">
                 </div>
-
-                <div class="inputBox">
-                    <input type="text" name="sobrenome" id="sobrenome" class="inputUser" required>
-                    <label for="sobrenome" class="labelInput">Sobrenome</label>
-                </div>
-
-                <div class="inputBox">
-                    <input type="text" name="email" id="email" class="inputUser" required>
-                    <label for="email" class="labelInput">Email</label>
-                </div>
-
-                <div class="inputBox">
-                    <input type="password" name="senha" id="senha" class="inputUser" required>
-                    <label for="senha" class="labelInput">Senha</label>
-                </div>
-
-                <div class="inputBox">
-                    <input type="text" name="cpf" id="date" class="inputUser" required>
-                    <label for="cpf" class="labelInput">CPF:</label>
-                </div>
-
-                <div class="inputBox">
-                    <input type="date" name="nasc" id="nasc" class="inputUser"required>
-
-                    
-                </div>
-
-                
-
-                
-            </fieldset>
-                <input class="col-6" type="submit" name="submit" value="Enviar" id="submit">
-                <button class="col-6" id="submit">Já tem uma conta?<a  id="login" href="login.php">Login</a></button>
-        </form>
+            </div>
+            <div class="col-md-7 pt-3 " >
+                <form class="p-3 border rounded-3 form-group " action="telaCadastro.php" method="POST">
+                    <div class="row">
+                        <div class="form-floating col mb-2">
+                            <input type="text" name="nome" class="form-control" id="floatingInput" placeholder="Nome" required>
+                            <label for="floatingInput" class="labelInput">Nome</label>
+                        </div>
+                        <div class="form-floating col mb-2">
+                            <input type="text" name="sobrenome" class="form-control" id="floatingInput" placeholder="Sobrenome" required>
+                            <label for="floatingInput" class="labelInput">Sobrenome</label>
+                        </div>
+                    </div>
+                    <div class="form-floating mb-2 ">
+                        <input type="text" name="cpf" class="form-control" id="floatingInput" placeholder="cpf aqui" required>
+                        <label for="floatingInput" class="labelInput">CPF</label>
+                    </div>
+                    <div class="row form-floating my-2">
+                        <div class="col-md-3">
+                            <p class="my-1">Data de nasc:</p>
+                        </div>
+                        <div class="col-md-9">
+                            <input type="date" class="form-control" id="floatingInput" name="nasc" required>
+                        </div>
+                    </div>
+                    <div class="form-floating mb-2">
+                        <input type="text" name="email" class="form-control" id="floatingInput" placeholder="seu_email@gmail.com" required>
+                        <label for="floatingEmail" class="labelInput">Email</label>
+                    </div>
+                    <div class="form-floating mb-2">
+                        <input type="password" name="senha" class="form-control" id="floatingPassword" placeholder="senha" required>
+                        <label for="floatingPassword" class="labelInput">Senha</label>
+                    </div>
+                    <button class="w-100 btn btn-lg btn-primary mt-4" type="submit" name="submit" value="Enviar" id="submit">Cadastrar-se</button>
+                    <hr class="my-4">
+                    <small class="text-body-secondary">Ao clicar em "Cadastrar-se", você concorda com os nossos termos de contrato</small>
+                </form>
+            </div>
+            
+        </div>
     </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe" crossorigin="anonymous">
+        </script>
 </body>
+
 </html>

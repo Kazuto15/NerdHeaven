@@ -44,7 +44,7 @@
                 <th class="col-md-1">ID</th>
                 <th class="col-md-3">Nome</th>
                 <th class="col-md-2">Quantidade </th>
-                <th class="col-md-3">Tipo Produto</th>
+                <th class="col-md-3">Categoria</th>
                 <th class="col-md-2">Preço</th>
                 <th class="text-center col-md-1">Alterar</th>
                 <th class="text-center col-md-1">Excluir</th>
