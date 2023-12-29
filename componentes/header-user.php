@@ -118,7 +118,12 @@ nav {
           <a class="nav-link text-white" href="sobre.php">Sobre nós</a>
         </li>
         <div class="d-grid gap-2 d-md-flex justify-content-md-end">
-          <button type="button" class="btn btn-light nav-item btn" id="login" onclick="location.href='../area-cliente/login.php';">login</button>
+        <form class="form-inline my-2 my-lg-0" action="">
+            <input class="form-control mr-sm-1" type="text" id="pesquisa" placeholder="Procurar" >
+            <button class="btn btn-outline-sucess my-2 my-sm-2 me-2 me-sm-2" id="btnProcurar"><img src="../imgs/header/procurar.png" width="20" height="20" alt=""></button>
+        </form>
+        
+          <button type="button" class="btn btn-light nav-item btn" id="login" onclick="location.href='../area-cliente/login.php';">teste</button>
           <button type="button" class="btn btn-light nav-item btn" id="registra" onclick="location.href='../area-cliente/registro.php';">registrar-se</button>
           
         </div>
@@ -155,10 +160,7 @@ nav {
           <li class="nav-item homeMobile">
             <a class="nav-link active text-white" aria-current="page" href="../area-cliente/sobre.php">Sobre nos</a>
           </li>
-        <!--   <form class="d-flex mt-3" role="search">
-              <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-              <button class="btn btn-outline-success" type="submit">Search</button>
-            </form> -->
+          
         </ul>
       </div>
     </div>

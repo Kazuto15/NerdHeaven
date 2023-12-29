@@ -188,7 +188,11 @@
     font-weight:600
   }
 }
-
+@media (max-width: 400px){
+   .footer{
+    display: none;
+   }
+}
 </style>
 
 <footer class="site-footer">
