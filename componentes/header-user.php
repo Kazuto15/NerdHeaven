@@ -97,6 +97,7 @@ nav {
     
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="../css/custom.css">
+    <link href="/your-path-to-uicons/css/uicons-[your-style].css" rel="stylesheet">
 <nav class="navbar navabar-expand-sm navbar-light nav_cor" id="nav-maximized"> 
   <div class="container">
     <a class="navbar-brand no-link" href="home.php">
@@ -118,9 +119,9 @@ nav {
           <a class="nav-link text-white" href="sobre.php">Sobre nós</a>
         </li>
         <div class="d-grid gap-2 d-md-flex justify-content-md-end">
-        <form class="form-inline my-2 my-lg-0" action="">
-            <input class="form-control mr-sm-1" type="text" id="pesquisa" placeholder="Procurar" >
-            <button class="btn btn-outline-sucess my-2 my-sm-2 me-2 me-sm-2" id="btnProcurar"><img src="../imgs/header/procurar.png" width="20" height="20" alt=""></button>
+        <form class="form-inline my-2 my-lg-0 " action="">
+          <input class="form-control mr-sm-1" type="text" id="pesquisa" placeholder="Procurar" >
+          <button class="btn btn-outline-sucess my-2 my-sm-2 me-2 me-sm-2" id="btnProcurar"><img src="../imgs/header_user/procurar.png" width="20" height="20" alt=""></button>
         </form>
         
           <button type="button" class="btn btn-light nav-item btn" id="login" onclick="location.href='../area-cliente/login.php';">teste</button>
